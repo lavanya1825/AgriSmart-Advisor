@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Agro Advisor</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f8f9f9;
+      color: #333;
+      
+    }
+
+    /* Top search bar */
+    .topbar {
+      background: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 8px 12px;
+      width: 100%;
+      max-width: 600px;
+      background: #fff;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 14px;
+    }
+
+    .search-box button {
+      background: none;
+      border: none;
+      margin-left: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      color: #555;
+    }
+
+    /* Container for sections */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    .weather {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .weather div {
+      text-align: center;
+      flex: 1;
+      min-width: 100px;
+      margin: 10px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background: #eee;
+      border-radius: 6px;
+      height: 12px;
+      overflow: hidden;
+      margin: 10px 0;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 65%; /* Example value */
+      background: #4caf50;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .crops {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    .crop-card {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 14px;
+      border: 1px solid #ddd;
+    }
+
+    .crop-card i {
+      font-size: 20px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .agri-tip {
+      background: #2e7d32;
+      color: #fff;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .farming-tip {
+      background: #f3f2ed;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .footer-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .footer-card {
+      background: #fff;
+      border: 1px solid #eee;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .footer-card i {
+      font-size: 22px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    /* Dashboard bottom nav */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .bottom-nav a i {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .bottom-nav a.active {
+      color: green;
+      font-weight: bold;
+    }
+
+    /* Icon Colors */
+    .icon-temp { color: red; }
+    .icon-humidity { color: dodgerblue; }
+    .icon-wind { color: gray; }
+    .icon-uv { color: goldenrod; }
+    .icon-mango { color: orange; }
+    .icon-tomato { color: crimson; }
+    .icon-rice { color: green; }
+    .icon-wheat { color: peru; }
+    .icon-banana { color: gold; }
+    .icon-watermelon { color: darkgreen; }
+    .icon-saved { color: royalblue; }
+    .icon-finance { color: seagreen; }
+    .icon-buy { color: purple; }
+    .icon-farm { color: dimgray; }
+  </style>
+
+</head>
+<script>
+// Voice Search using Web Speech API
+function startVoiceSearch() {
+  if (!('webkitSpeechRecognition' in window)) {
+    alert("Sorry, your browser doesn't support speech recognition.");
+    return;
+  }
+  const recognition = new webkitSpeechRecognition();
+  recognition.lang = "en-IN";
+  recognition.start();
+
+  recognition.onresult = function(event) {
+  document.getElementById("searchInput").value = event.results[0][0].transcript;
+  document.getElementById("searchForm").submit();
+};
+
+}
+
+// Image (Lens) Search – simulate upload
+function startLensSearch() {
+  document.getElementById("lensInput").click();
+}
+function handleLensFile(event) {
+  const file = event.target.files[0];
+  if (file) {
+    alert("📷 Lens search activated for: " + file.name);
+    // TODO: send file to Flask backend for crop/soil/disease detection
+  }
+}
+
+</script>
+
+<body>
+
+  <!-- Search bar -->
+  <div class="topbar">
+    <form id="searchForm" method="get" action="{{ url_for('search') }}" class="search-box">
+  <input type="text" id="searchInput" name="q" placeholder="Search crops, ask questions, or get advice...">
+
+  <!-- Voice -->
+  <button type="button" title="Voice" onclick="startVoiceSearch()">
+    <i class="fas fa-microphone"></i>
+  </button>
+
+  <!-- Lens -->
+  <input type="file" id="lensInput" style="display:none" accept="image/*" onchange="handleLensFile(event)">
+  <button type="button" title="Lens" onclick="startLensSearch()">
+    <i class="fas fa-camera"></i>
+  </button>
+
+  <!-- Search -->
+  <button type="submit" title="Search">
+    <i class="fas fa-search"></i>
+  </button>
+</form>
+
+  </div>
+
+  <div class="container">
+
+    <!-- Section 1: Weather & Crops -->
+    <div class="section">
+      <div class="weather">
+        <div><i class="fas fa-temperature-high icon-temp"></i> Temp: <b>28°C</b></div>
+        <div><i class="fas fa-tint icon-humidity"></i> Humidity: <b>72%</b></div>
+        <div><i class="fas fa-wind icon-wind"></i> Wind: <b>12 km/h</b></div>
+        <div><i class="fas fa-sun icon-uv"></i> UV Index: <b>6</b></div>
+      </div>
+      <div>Soil Moisture: 65%</div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+
+      <h2>Recommended Crops</h2>
+      <div class="crops">
+        <div class="crop-card">Rice <br><small>Suitable for hot humid weather</small></div>
+        <div class="crop-card">Sugarcane <br><small>Suitable for hot humid weather</small></div>
+        <div class="crop-card">Coconut <br><small>Suitable for hot humid weather</small></div>
+        <div class="crop-card">Banana <br><small>Suitable for hot humid weather</small></div>
+      </div>
+
+      <p style="margin-top:10px; color:#2b7a78;"><i class="fas fa-cloud-rain"></i> Rainfall today: 5mm - Good for water-loving crops</p>
+    </div>
+
+    <!-- Section 2: Agricultural Tips & Crops -->
+    <div class="section">
+      <div class="agri-tip">
+        <i class="fas fa-lightbulb"></i> Today's Agricultural Tip: Weather conditions are favorable for most farming activities. Good time for field operations.
+      </div>
+      
+      <h2>Recommended Crops for Current Weather</h2>
+      <div class="crops">
+        <div class="crop-card"><i class="fas fa-seedling icon-mango"></i> Mango <br><small>3-5 years | 24-30°C</small> <br>₹4,500</div>
+        <div class="crop-card"><i class="fas fa-apple-alt icon-tomato"></i> Tomato <br><small>90-120 days | 18-25°C</small> <br>₹2,500</div>
+        <div class="crop-card"><i class="fas fa-seedling icon-rice"></i> Rice <br><small>90-150 days | 20-35°C</small> <br>₹2,500</div>
+        <div class="crop-card"><i class="fas fa-bread-slice icon-wheat"></i> Wheat <br><small>120-150 days | 15-25°C</small> <br>₹2,200</div>
+        <div class="crop-card"><i class="fas fa-lemon icon-banana"></i> Banana <br><small>11-15 months | 26-30°C</small> <br>₹2,800</div>
+        <div class="crop-card"><i class="fas fa-watermelon icon-watermelon"></i> Watermelon <br><small>80-100 days | 25-35°C</small> <br>₹1,800</div>
+      </div>
+    </div>
+
+    <!-- Section 3: Farming Tools & Tips -->
+    <div class="section">
+      <div class="footer-cards">
+        <div class="footer-card"><i class="fas fa-folder icon-saved"></i> Saved Crops <br><small>View and manage your crops</small><a href="{{url_for('saved_crops')}}" class="active"></a></div>
+        <div class="footer-card"><i class="fas fa-coins icon-finance"></i> Financial Tracker <br><small>Budget & Reports</small></div>
+        <div class="footer-card"><i class="fas fa-shopping-cart icon-buy"></i> Buy Here <br><small>Seeds, fertilizers, equipment</small></div>
+        <div class="footer-card"><i class="fas fa-cogs icon-farm"></i> Farm Management <br><small>Track activities</small></div>
+
+      </div>
+
+      <div class="farming-tip">
+        <i class="fas fa-leaf"></i> Today's Farming Tip: Water your crops early in the morning to reduce water evaporation and provide optimal hydration.
+      </div>
+    </div>
+  </div>
+<!-- Dashboard bottom nav -->
+<div class="bottom-nav">
+  <a href="{{url_for('home')}}" class="active">
+<i class="fas fa-home"></i>
+    Home
+  </a>
+  <a href="{{url_for('crops')}}">
+    <i class="fas fa-seedling"></i>
+    Crops
+  </a>
+  <a href="{{url_for('soil')}}">
+    <i class="fas fa-globe"></i>
+    Soil
+  </a>
+  <a href="{{url_for('market')}}">
+    <i class="fas fa-chart-line"></i>
+    Market
+  </a>
+  <a href="{{url_for('buyhere')}}">
+    <i class="fas fa-shopping-cart"></i>
+    Buy
+  </a>
+  <a href="{{url_for('Sell')}}">
+    <i class="fas fa-hand-holding-usd"></i>
+    Sell
+  </a>
+  <a href="{{url_for('help')}}">
+    <i class="fas fa-question-circle"></i>
+    Help
+  </a>
+  <form method="get" action="{{url_for('crops')}}">
+      <form method="get" action="{{url_for('soil')}}">
+      <form method="get" action="{{url_for('market')}}">
+      <form method="get" action="{{url_for('Sell')}}">
+      <form method="get" action="{{url_for('help')}}">
+      <form method="get" action="{{url_for('buyhere')}}">
+      <form method="get" action="{{url_for('saved_crops')}}">
+        </form>
+</div>
+
+</body>
+</html>

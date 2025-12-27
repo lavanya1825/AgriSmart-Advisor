@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help & Support</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+    }
+
+    /* Header Section */
+    .header {
+      background: linear-gradient(90deg, #4caf50, #388e3c);
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .header small {
+      display: block;
+      font-weight: normal;
+      font-size: 14px;
+    }
+
+    /* Card Section */
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
+
+    .card h3 span {
+      margin-left: 8px;
+      font-size: 16px;
+      color: #555;
+      font-weight: normal;
+    }
+
+    .phone-number {
+      display: flex;
+      align-items: center;
+      background: #f3f3f3;
+      border-radius: 6px;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    .phone-number span {
+      margin-left: 10px;
+      font-size: 15px;
+    }
+
+    /* Feedback */
+    .feedback {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Quick Tips */
+    .quick-tips {
+      background: #f0ede8;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 15px;
+    }
+
+    .quick-tips h4 {
+      margin-top: 0;
+    }
+
+    .quick-tips ul {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.8em;
+    }
+
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+
+    .bottom-nav a {
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .bottom-nav a.active {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    Help & Support
+    <small>Get assistance when you need it</small>
+  </div>
+
+  <!-- Chat Section -->
+  <div class="card">
+    <h3>💬 Chat with NGOs/Officials <span>Connect with verified NGOs, agricultural officers, and support teams</span></h3>
+  </div>
+
+  <!-- Call Support -->
+  <div class="card">
+    <h3>📞 Call Support <span>Direct call support for urgent help</span></h3>
+
+    <div class="phone-number">☎ Agricultural Officer: <span>+1-800-AGRI-HELP</span></div>
+    <div class="phone-number">☎ NGO Support: <span>+1-800-NGO-SUPPORT</span></div>
+  </div>
+
+  <!-- Feedback -->
+  <div class="card">
+    <h3>📝 Feedback Option</h3>
+    <p>Submit suggestions, complaints, or feedback to help us improve</p>
+  </div>
+
+  <!-- Quick Tips -->
+  <div class="quick-tips">
+    <h4>Quick Tips</h4>
+    <ul>
+      <li>For urgent issues, use the direct call options</li>
+      <li>Chat support is available 24/7 for general queries</li>
+      <li>Your feedback helps us improve our services</li>
+      <li>All conversations are secure and confidential</li>
+    </ul>
+  </div>
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <a href="{{url_for('home')}}">🏠<br>Home</a>
+    <a href="{{url_for('crops')}}">🌱<br>Crops</a>
+    <a href="{{url_for('soil')}}">⛰<br>Soil</a>
+    <a href="{{url_for('market')}}">📈<br>Market</a>
+    <a href="{{url_for('buyhere')}}">🛒<br>Buy Here</a>
+    <a href="{{url_for('Sell')}}">💲<br>Sell</a>
+    <a href="{{url_for('help')}}" class="active">❓<br>Help</a>
+
+  </div>
+
+</body>
+</html>

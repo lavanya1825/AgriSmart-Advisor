@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Saved Crops</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .crop { background: #e8ffe8; padding: 10px; margin: 8px 0; border-radius: 6px; }
+  </style>
+</head>
+<body>
+
+<h2>🌱 Your Saved Crops</h2>
+
+{% if crops %}
+  {% for crop in crops %}
+    <div class="crop">{{ crop }}</div>
+  {% endfor %}
+{% else %}
+  <p>No crops saved yet.</p>
+{% endif %}
+
+<a href="{{ url_for('crops') }}">⬅ Back to Crops</a>
+
+</body>
+</html>

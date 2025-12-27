@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+</head>
+<body>
+  <h2>Search Results for: {{ query }}</h2>
+  {% if results %}
+    <ul>
+      {% for r in results %}
+        <li>{{ r }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No results found.</p>
+  {% endif %}
+  <br>
+  <a href="{{ url_for('home') }}">⬅ Back to Home</a>
+</body>
+<form action="/search" method="get">
+    <input type="text" name="q" placeholder="Type in any language">
+    <button type="submit">Search</button>
+</form>
+
+</html>

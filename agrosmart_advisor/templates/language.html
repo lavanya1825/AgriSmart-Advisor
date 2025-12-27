@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Language - Agro Sahayak Bhasha</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0fdf4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .language-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 400px;
+      text-align: center;
+    }
+    .language-card h2 {
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+    .lang-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 15px;
+      margin: 8px 0;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-option:hover {
+      border-color: #2e7d32;
+      background: #f1fff4;
+    }
+    .lang-option input {
+      margin-right: 10px;
+    }
+    .lang-option label {
+      flex: 1;
+      text-align: left;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: #2e7d32;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+<div class="language-card">
+    <h2>🌐 Select Your Language</h2>
+    <!-- Redirect to register.html -->
+    <form method="get" action="{{url_for('register')}}">
+      <div class="lang-option">
+        <input type="radio" id="english" name="language" value="english" required>
+        <label for="english">English</label>
+      </div>
+      <div class="lang-option">
+        <input type="radio" id="hindi" name="language" value="hindi">
+        <label for="hindi">हिन्दी (Hindi)</label>
+      </div>
+      <div class="lang-option">
+        <input type="radio" id="telugu" name="language" value="telugu">
+        <label for="telugu">తెలుగు (Telugu)</label>
+      </div>
+      <div class="lang-option">
+        <input type="radio" id="tamil" name="language" value="tamil">
+        <label for="tamil">தமிழ் (Tamil)</label>
+      </div>
+      <div class="lang-option">
+        <input type="radio" id="marathi" name="language" value="marathi">
+        <label for="marathi">मराठी (Marathi)</label>
+      </div>
+      <div class="lang-option">
+        <input type="radio" id="kannada" name="language" value="kannada">
+        <label for="kannada">ಕನ್ನಡ (Kannada)</label>
+      </div>
+      <div class="lang-option">
+        <input type="radio" id="punjabi" name="language" value="punjabi">
+        <label for="punjabi">ਪੰਜਾਬੀ (Punjabi)</label>
+      </div>
+  
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+</body>
+</html>

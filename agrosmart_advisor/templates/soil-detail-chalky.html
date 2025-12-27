@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chalky Soil</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: "Inter", sans-serif; background: #fafafa; margin: 0; }
+    header { padding: 16px; font-size: 1.2rem; font-weight: 600; border-bottom: 1px solid #ddd; }
+    header i { margin-right: 10px; color: green; }
+    .section-title { margin: 20px 16px 10px; font-weight: 600; font-size: 1.1rem; border-left: 5px solid green; padding-left: 10px; color: #333; }
+    .progress { background: #eee; border-radius: 10px; height: 16px; margin: 16px; position: relative; }
+    .progress-fill { background: green; height: 100%; width: 85%; border-radius: 10px; }
+    .progress-label { position: absolute; right: 10px; top: -22px; font-size: 0.9rem; font-weight: 600; color: green; }
+    .crop-row { display: flex; gap: 10px; padding: 10px 16px; flex-wrap: wrap; }
+    .crop-card { flex: 1 1 calc(33% - 10px); background: #e7f6ea; border-radius: 10px; padding: 10px; font-size: 0.9rem; }
+    .crop-card .name { font-weight: 600; margin-bottom: 5px; }
+    .characteristics { margin: 10px 16px; padding: 12px; background: #fff; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
+    .characteristics li { margin: 6px 0; color: #444; }
+    footer { display: flex; justify-content: space-around; align-items: center; background: #fff; padding: 10px 0; border-top: 1px solid #ddd; box-shadow: 0 -2px 6px rgba(0,0,0,0.1); position: sticky; bottom: 0; }
+    footer .nav-item { text-align: center; font-size: 0.8rem; color: #555; }
+    footer .nav-item i { font-size: 1.3rem; display: block; margin-bottom: 4px; color: green; }
+    footer .active { color: green; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <header><i class="fa-solid fa-seedling"></i> Chalky Soil</header>
+
+  <div class="section-title">Weather Match</div>
+  <div class="progress">
+    <div class="progress-fill"></div>
+    <div class="progress-label">Excellent</div>
+  </div>
+  <div style="margin: 0 16px; font-size: 0.9rem;">
+  <p>Temperature: 20–28°C | Humidity: 50% | Condition: Alkaline & Dry</p>
+  </div>
+
+  <div class="section-title">Recommended Crops (Current Weather)</div>
+  <div class="crop-row">
+    <div class="crop-card"><div class="name">Barley</div>Best for current conditions</div>
+    <div class="crop-card"><div class="name">Beets</div>Best for current conditions</div>
+    <div class="crop-card"><div class="name">Cabbage</div>Best for current conditions</div>
+    <div class="crop-card"><div class="name">Spinach</div>Best for current conditions</div>
+    <div class="crop-card"><div class="name">Grapes</div>Best for current conditions</div>
+
+</div>
+
+  <div class="section-title">Characteristics</div>
+  <div class="characteristics">
+    <ul>
+       <li>Alkaline soil with high calcium carbonate</li>
+    <li>Often stony and shallow</li>
+    <li>Free-draining but low fertility</li>
+    <li>Suited for drought-resistant crops</li>
+  </ul>
+  </div>
+
+  <footer>
+    <div class="nav-item"><i class="fa-solid fa-house"></i>Home</div>
+    <div class="nav-item"><i class="fa-solid fa-seedling"></i>Crops</div>
+    <div class="nav-item active"><i class="fa-solid fa-mountain"></i>Soil</div>
+    <div class="nav-item"><i class="fa-solid fa-store"></i>Market</div>
+    <div class="nav-item"><i class="fa-solid fa-cart-shopping"></i>Buy</div>
+    <div class="nav-item"><i class="fa-solid fa-handshake"></i>Sell</div>
+    <div class="nav-item"><i class="fa-solid fa-circle-question"></i>Help</div>
+  </footer>
+
+</body>
+</html>

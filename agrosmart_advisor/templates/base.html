@@ -1,0 +1,18 @@
+<script>
+  // Check if language is already set in URL
+  const urlParams = new URLSearchParams(window.location.search);
+  if(!urlParams.get('language')) {
+      const userLang = navigator.language.slice(0,2);
+      const langMap = {
+        'en': 'english',
+        'hi': 'hindi',
+        'te': 'telugu',
+        'ta': 'tamil',
+        'mr': 'marathi',
+        'kn': 'kannada',
+        'pa': 'punjabi'
+      };
+      const detectedLang = langMap[userLang] || 'english';
+      window.location.href = window.location.pathname + '?language=' + detectedLang;
+  }
+</script>

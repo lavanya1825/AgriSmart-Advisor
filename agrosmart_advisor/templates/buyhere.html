@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Here - Smart Agro Advisor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f8f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    h1 i {
+      margin-right: 10px;
+      color: #2e7d32;
+    }
+
+    /* Search and filter */
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .filters input, .filters select {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    /* Bundle card */
+    .bundle {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .bundle h2 {
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+
+    .bundle small {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .bundle ul {
+      margin: 10px 0 0 15px;
+      font-size: 14px;
+    }
+
+    .bundle ul li {
+      margin-bottom: 5px;
+    }
+
+    .price {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .price del {
+      color: #888;
+      margin-right: 10px;
+    }
+
+    .price strong {
+      font-size: 16px;
+      color: #2e7d32;
+    }
+
+    .discount {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #fdd835;
+      color: #333;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* Bottom Nav */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .bottom-nav a i {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .bottom-nav a.active {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1><i class="fas fa-shopping-cart"></i> Buy Here</h1>
+
+    <!-- Filters -->
+    <div class="filters">
+      <input type="text" placeholder="Search by crop, product name, or brand...">
+      <select>
+        <option>All Crops</option>
+        <option>Rice</option>
+        <option>Wheat</option>
+        <option>Mango</option>
+        <option>Banana</option>
+        <option>Onion</option>
+        <option>Maize</option>
+      </select>
+      <select>
+        <option>All Categories</option>
+        <option>Seeds</option>
+        <option>Fertilizers</option>
+        <option>Pesticides</option>
+      </select>
+      <select>
+        <option>All Prices</option>
+        <option>Below ₹1000</option>
+        <option>₹1000 - ₹5000</option>
+        <option>Above ₹5000</option>
+      </select>
+    </div>
+
+    <h2>Recommended Bundles <span style="color:#777; font-size:14px;">Save More</span></h2>
+
+    <!-- Rice -->
+    <div class="bundle">
+      <div class="discount">-15% OFF</div>
+      <h2>Complete Rice Farming Kit</h2>
+      <small>Rice Farming</small>
+      <p>Everything you need for rice farming - seeds, fertilizers, and pest control.</p>
+      <ul>
+        <li>🌾 Basmati Rice Seeds</li>
+        <li>🧪 Urea</li>
+        <li>🧪 DAP (Di-Ammonium Phosphate)</li>
+        <li>🐞 Imidacloprid 17.8% SL</li>
+      </ul>
+      <div class="price">
+        <del>₹1,830</del> <strong>₹1,550</strong>
+      </div>
+    </div>
+
+    <!-- Wheat -->
+    <div class="bundle">
+      <div class="discount">-10% OFF</div>
+      <h2>Wheat Farming Kit</h2>
+      <small>Wheat Farming</small>
+      <p>Essential package for wheat cultivation with top quality seeds and fertilizers.</p>
+      <ul>
+        <li>🌾 Sharbati Wheat Seeds</li>
+        <li>🧪 Urea</li>
+        <li>🧪 Potash</li>
+        <li>🐞 Fungicide Pack</li>
+      </ul>
+      <div class="price">
+        <del>₹2,200</del> <strong>₹1,980</strong>
+      </div>
+    </div>
+
+    <!-- Mango -->
+    <div class="bundle">
+      <div class="discount">-20% OFF</div>
+      <h2>Mango Farming Kit</h2>
+      <small>Mango Orchard</small>
+      <p>Best combo for mango plantations - from grafts to growth boosters.</p>
+      <ul>
+        <li>🥭 Mango Grafts (Alphonso)</li>
+        <li>🧪 Organic Fertilizer</li>
+        <li>🧪 Micronutrients</li>
+        <li>🐞 Pest Control Spray</li>
+      </ul>
+      <div class="price">
+        <del>₹6,000</del> <strong>₹4,800</strong>
+      </div>
+    </div>
+
+    <!-- Banana -->
+    <div class="bundle">
+      <div class="discount">-12% OFF</div>
+      <h2>Banana Farming Kit</h2>
+      <small>Banana Farming</small>
+      <p>Complete kit for high-yield banana cultivation.</p>
+      <ul>
+        <li>🍌 Banana Tissue Culture Plants</li>
+        <li>🧪 NPK Fertilizer</li>
+        <li>🧪 Organic Manure</li>
+        <li>🐞 Insecticide Pack</li>
+      </ul>
+      <div class="price">
+        <del>₹5,000</del> <strong>₹4,400</strong>
+      </div>
+    </div>
+
+    <!-- Onion -->
+    <div class="bundle">
+      <div class="discount">-18% OFF</div>
+      <h2>Onion Farming Kit</h2>
+      <small>Onion Farming</small>
+      <p>Everything required for onion cultivation - seeds, fertilizers, pest control.</p>
+      <ul>
+        <li>🧅 Hybrid Onion Seeds</li>
+        <li>🧪 Urea</li>
+        <li>🧪 Super Phosphate</li>
+        <li>🐞 Fungicide Spray</li>
+      </ul>
+      <div class="price">
+        <del>₹2,800</del> <strong>₹2,300</strong>
+      </div>
+    </div>
+
+    <!-- Maize -->
+    <div class="bundle">
+      <div class="discount">-14% OFF</div>
+      <h2>Maize Farming Kit</h2>
+      <small>Maize Farming</small>
+      <p>High-yield maize farming package for farmers.</p>
+      <ul>
+        <li>🌽 Hybrid Maize Seeds</li>
+        <li>🧪 DAP Fertilizer</li>
+        <li>🧪 Potash</li>
+        <li>🐞 Pesticide Spray</li>
+      </ul>
+      <div class="price">
+        <del>₹3,500</del> <strong>₹3,000</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+    <a href="{{url_for('home')}}"><i class="fas fa-home"></i>Home</a>
+    <a href="{{url_for('crops')}}"><i class="fas fa-seedling"></i>Crops</a>
+    <a href="{{url_for('soil')}}"><i class="fas fa-globe"></i>Soil</a>
+    <a href="{{url_for('market')}}"><i class="fas fa-chart-line"></i>Market</a>
+    <a href="{{url_for('buyhere')}}" class="active"><i class="fas fa-shopping-cart"></i>Buy Here</a>
+    <a href="{{url_for('Sell')}}"><i class="fas fa-hand-holding-usd"></i>Sell</a>
+    <a href="{{url_for('help')}}"><i class="fas fa-question-circle"></i>Help</a>
+  </div>
+
+</body>
+</html>

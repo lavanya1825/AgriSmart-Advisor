@@ -1,0 +1,1068 @@
+{
+  "Fruits": [
+    {
+      "name": "Mango",
+      "duration": "3–5 years (perennial)",
+      "soil": "Well-drained alluvial or loamy soil, pH 5.5–7.5",
+      "weather": "Tropical and subtropical, 24–30°C",
+      "seeds": "Grafted saplings or seedlings",
+      "fertilizers": "NPK 1 kg/tree/year initially, increases with age",
+      "natural_manures": "FYM 20–30 kg/tree, compost, neem cake",
+      "required_items": "Grafted plants, irrigation channels, pruning tools",
+      "process": [
+        "Step 1: Site Selection – Choose frost-free, sunny locations with good drainage.",
+        "Step 2: Land Preparation – Dig pits 1×1×1 m, fill with FYM + soil mixture.",
+        "Step 3: Planting – Transplant grafted plants at spacing of 10×10 m.",
+        "Step 4: Irrigation – Water weekly for young plants, mature trees at longer intervals.",
+        "Step 5: Fertilization – Apply FYM + NPK during growing season, increase with age.",
+        "Step 6: Pruning & Training – Remove diseased/dry branches, maintain proper canopy.",
+        "Step 7: Pest Control – Use neem oil sprays for fruit flies and aphids.",
+        "Step 8: Harvesting – Fruits ready after 3–5 years, harvested when skin color changes and aroma develops."
+      ]
+    },
+    {
+      "name": "Banana",
+      "duration": "11–12 months",
+      "soil": "Deep, rich loamy soil, pH 6–7.5",
+      "weather": "Warm humid, 20–30°C, frost sensitive",
+      "seeds": "Suckers or tissue-cultured plants",
+      "fertilizers": "NPK 200:100:200 g/plant in splits",
+      "natural_manures": "FYM 10–15 kg/plant, compost, green manure",
+      "required_items": "Suckers, irrigation, mulching material",
+      "process": [
+        "Step 1: Planting Material – Use tissue-cultured banana plants for better yield.",
+        "Step 2: Field Preparation – Dig pits of 60×60×60 cm, fill with compost + soil.",
+        "Step 3: Planting – Plant suckers/tissue plants at spacing 2×2 m.",
+        "Step 4: Irrigation – Frequent irrigation, avoid waterlogging.",
+        "Step 5: Fertilization – Apply FYM + NPK in 4–5 split doses.",
+        "Step 6: Propping – Support plants with bamboo poles during heavy bunch formation.",
+        "Step 7: Pest & Disease Control – Spray neem oil or bio-pesticides for aphids and leaf spot.",
+        "Step 8: Harvesting – Bunches ready in 11–12 months, harvest when fingers are plump and green."
+      ]
+    },
+    {
+      "name": "Apple",
+      "duration": "5–8 years for fruiting",
+      "soil": "Well-drained loamy soil, pH 6–7",
+      "weather": "Cool climate, 10–25°C, chilling hours required",
+      "seeds": "Grafted apple saplings",
+      "fertilizers": "NPK 500:250:750 g/tree/year",
+      "natural_manures": "FYM 30–40 kg/tree, compost",
+      "required_items": "Grafted saplings, support stakes, pruning tools",
+      "process": [
+        "Step 1: Site Selection – Plant in temperate hilly areas with good chilling.",
+        "Step 2: Land Preparation – Dig pits 1×1×1 m, fill with compost + topsoil.",
+        "Step 3: Planting – Transplant saplings at 4×4 m spacing.",
+        "Step 4: Irrigation – Irrigate at critical stages (flowering & fruit set).",
+        "Step 5: Fertilization – Apply compost + NPK annually, increasing with tree age.",
+        "Step 6: Pruning – Essential for canopy shape and better fruit quality.",
+        "Step 7: Pest Control – Use neem sprays or traps for codling moth and aphids.",
+        "Step 8: Harvesting – Fruits harvested after 5–8 years, picked when skin color changes and fruits are firm."
+      ]
+    },
+    {
+      "name": "Guava",
+      "duration": "2–3 years",
+      "soil": "Alluvial or sandy loam, pH 5–7",
+      "weather": "Tropical, subtropical, 20–30°C",
+      "seeds": "Seedlings or grafted plants",
+      "fertilizers": "NPK 300:200:300 g/tree/year",
+      "natural_manures": "FYM 10–15 kg/tree",
+      "required_items": "Grafted plants, pruning tools, irrigation",
+      "process": [
+        "Step 1: Land Preparation – Plough land, dig pits (60×60×60 cm), fill with FYM + soil.",
+        "Step 2: Planting – Plant grafted saplings at spacing 5×5 m.",
+        "Step 3: Irrigation – Provide water weekly in summer, less in rainy season.",
+        "Step 4: Fertilization – Apply NPK annually before flowering.",
+        "Step 5: Pruning – Regular pruning to remove overcrowded branches.",
+        "Step 6: Pest Control – Neem oil or bio-pesticides against fruit fly.",
+        "Step 7: Harvesting – Fruits ready after 2–3 years, harvested at mature green stage."
+      ]
+    },
+    {
+      "name": "Grapes",
+      "duration": "2–3 years",
+      "soil": "Sandy loam, well-drained, pH 6–7",
+      "weather": "Dry and warm, 15–30°C",
+      "seeds": "Cuttings or grafted plants",
+      "fertilizers": "NPK 500:250:500 g/vine/year",
+      "natural_manures": "FYM 20 kg/vine",
+      "required_items": "Vine stakes, trellis system, pruning tools",
+      "process": [
+        "Step 1: Site Preparation – Install trellis or bower system for vine support.",
+        "Step 2: Planting – Use stem cuttings or grafts, spaced at 3×3 m.",
+        "Step 3: Training – Train vines on wires, prune for canopy balance.",
+        "Step 4: Irrigation – Irrigate during fruit development, reduce before harvest.",
+        "Step 5: Fertilization – FYM + NPK applied annually in split doses.",
+        "Step 6: Pest Control – Neem oil for mealy bugs and fungal sprays if needed.",
+        "Step 7: Harvesting – Bunches harvested after 2–3 years, when berries turn soft and sweet."
+      ]
+    },
+    {
+      "name": "Papaya",
+      "duration": "8–10 months",
+      "soil": "Light loamy soil, well-drained, pH 6–7.5",
+      "weather": "Warm and humid, 22–30°C",
+      "seeds": "Papaya seeds (hybrid varieties)",
+      "fertilizers": "NPK 200:100:200 g/plant/year",
+      "natural_manures": "FYM 10–15 kg/plant, compost",
+      "required_items": "Seed trays, irrigation, organic sprays",
+      "process": [
+        "Step 1: Nursery Raising – Sow seeds in polythene bags or trays.",
+        "Step 2: Transplanting – Shift seedlings at 30–40 days to main field (spacing 2×2 m).",
+        "Step 3: Irrigation – Water every 10–15 days, avoid waterlogging.",
+        "Step 4: Fertilization – Apply FYM at planting, NPK in 3–4 splits.",
+        "Step 5: Weeding – Regular hand weeding required.",
+        "Step 6: Pest Control – Neem sprays against papaya mealybug.",
+        "Step 7: Harvesting – Fruits ready in 8–10 months when skin changes from green to yellow."
+      ]
+    },
+    {
+      "name": "Pomegranate",
+      "duration": "2–3 years",
+      "soil": "Light loamy soil, pH 6–7.5",
+      "weather": "Semi-arid, 20–35°C",
+      "seeds": "Air-layered or cutting plants",
+      "fertilizers": "NPK 500:200:500 g/tree/year",
+      "natural_manures": "FYM 10–15 kg/tree",
+      "required_items": "Pruning tools, irrigation system",
+      "process": [
+        "Step 1: Field Preparation – Dig pits 60×60×60 cm, fill with soil + FYM.",
+        "Step 2: Planting – Air-layered saplings planted at spacing 5×5 m.",
+        "Step 3: Irrigation – Provide water weekly, critical at flowering and fruiting.",
+        "Step 4: Fertilization – Apply FYM and NPK in split doses.",
+        "Step 5: Pruning – Regular pruning to maintain open canopy.",
+        "Step 6: Pest Management – Neem oil sprays against fruit borers and aphids.",
+        "Step 7: Harvesting – Trees start fruiting after 2–3 years, fruits picked when skin turns bright red."
+      ]
+    },
+    {
+      "name": "Strawberry",
+      "duration": "3–5 months",
+      "soil": "Sandy loam, rich in organic matter, pH 5.5–6.5",
+      "weather": "Cool temperate, 15–25°C",
+      "seeds": "Runner plants or seedlings",
+      "fertilizers": "NPK 100:50:100 kg/acre",
+      "natural_manures": "FYM 5 tons/acre, compost",
+      "required_items": "Raised beds, mulching sheets, irrigation system",
+      "process": [
+        "Step 1: Field Preparation – Prepare raised beds covered with plastic mulch.",
+        "Step 2: Planting – Transplant runners at spacing 30×30 cm.",
+        "Step 3: Irrigation – Use drip irrigation for better fruiting.",
+        "Step 4: Fertilization – Apply FYM + NPK in 2–3 splits.",
+        "Step 5: Mulching – Use straw or plastic to keep fruits clean.",
+        "Step 6: Pest Management – Neem oil sprays for aphids and mites.",
+        "Step 7: Harvesting – Fruits ready in 3–5 months, harvested when bright red and firm."
+      ]
+    }
+  ],
+  
+  "vegetables": [
+    {
+      "name": "Tomato",
+      "duration": "90–120 days",
+      "soil": "Well-drained loamy soil, rich in organic matter",
+      "weather": "Warm, 20°C–30°C, frost-free",
+      "seeds": "Hybrid or open-pollinated varieties",
+      "fertilizers": "NPK 100:50:50 kg/ha in split doses",
+      "natural_manures": "FYM, compost, vermicompost",
+      "process": [
+        "Nursery raising: Sow seeds in raised beds or trays.",
+        "Transplanting: Shift 25–30 day-old seedlings at 60 × 45 cm spacing.",
+        "Irrigation: Water every 7–10 days; avoid waterlogging.",
+        "Staking: Tie plants to stakes for support.",
+        "Pruning: Remove side shoots to encourage main stem growth.",
+        "Fertilization: Apply manures before planting, split fertilizers at flowering and fruiting.",
+        "Plant protection: Spray against fruit borer and blight.",
+        "Harvesting: Pluck fruits when they turn red and firm."
+      ]
+    },
+    {
+      "name": "Carrot",
+      "duration": "90–120 days",
+      "soil": "Light sandy loam, deep and well-drained",
+      "weather": "Cool season, 15°C–25°C",
+      "seeds": "Improved varieties like Pusa Kesar, Nantes",
+      "fertilizers": "NPK 60:40:40 kg/ha",
+      "natural_manures": "FYM, leaf compost, ash",
+      "process": [
+        "Land preparation: Plough 2–3 times to make soil friable.",
+        "Sowing: Direct sowing of seeds in rows at 30 cm spacing.",
+        "Thinning: Remove extra seedlings to maintain spacing.",
+        "Irrigation: Water at 7–10 day intervals.",
+        "Weeding: Regular weeding to keep soil loose and aerated.",
+        "Fertilization: Apply FYM before sowing, top dress nitrogen after 30 days.",
+        "Plant protection: Monitor for leaf blight and nematodes.",
+        "Harvesting: Pull out roots when they reach full size and color."
+      ]
+    },
+    {
+      "name": "Spinach",
+      "duration": "40–50 days",
+      "soil": "Loamy soil rich in organic matter",
+      "weather": "Cool, moist climate, 15°C–25°C",
+      "seeds": "Local and improved varieties like All Green",
+      "fertilizers": "NPK 50:30:20 kg/ha",
+      "natural_manures": "FYM, compost, vermicompost",
+      "process": [
+        "Field preparation: Fine tilth with 2–3 ploughings.",
+        "Sowing: Direct sowing in rows at 30 cm spacing.",
+        "Irrigation: Water every 4–5 days in summer, 7–10 days in winter.",
+        "Weeding: Regularly weed and loosen soil.",
+        "Fertilization: Apply FYM before sowing, top dress nitrogen after 20 days.",
+        "Plant protection: Control leaf miners and downy mildew with sprays.",
+        "Harvesting: Pluck outer leaves 25–30 days after sowing, continue for 2–3 cuttings."
+      ]
+    },
+    {
+      "name": "Chili",
+      "duration": "120–150 days",
+      "soil": "Well-drained sandy loam, rich in organic matter",
+      "weather": "Warm, 20°C–30°C",
+      "seeds": "Improved hybrids like Pusa Jwala, Tejaswini",
+      "fertilizers": "NPK 120:60:60 kg/ha",
+      "natural_manures": "FYM, compost, neem cake",
+      "process": [
+        "Nursery raising: Sow seeds in raised beds.",
+        "Transplanting: Shift 40–45 day-old seedlings at 60 × 45 cm spacing.",
+        "Irrigation: Irrigate every 7–10 days.",
+        "Weeding: Keep beds weed-free.",
+        "Fertilization: Apply manures before planting, nitrogen in 3 splits.",
+        "Plant protection: Spray against thrips, mites, and leaf curl virus.",
+        "Harvesting: Pick green chilies at tender stage, red ones at full maturity."
+      ]
+    },
+    {
+      "name": "Onion",
+      "duration": "120–150 days",
+      "soil": "Fertile loamy soil with good drainage",
+      "weather": "Cool season for vegetative growth, dry weather for bulb maturity",
+      "seeds": "Improved varieties like N-53, Pusa Red",
+      "fertilizers": "NPK 100:50:50 kg/ha",
+      "natural_manures": "FYM, compost, wood ash",
+      "process": [
+        "Nursery: Sow seeds in raised beds.",
+        "Transplanting: 45–50 day-old seedlings transplanted at 10 × 15 cm spacing.",
+        "Irrigation: Provide light irrigations at 8–10 day intervals.",
+        "Weeding: Regular hand weeding and hoeing.",
+        "Fertilization: Apply manures before transplanting, fertilizers in split doses.",
+        "Plant protection: Spray against thrips and purple blotch.",
+        "Harvesting: Bulbs harvested when tops fall over and dry."
+      ]
+    },
+    {
+      "name": "Cabbage",
+      "duration": "90–120 days",
+      "soil": "Well-drained sandy loam to clay loam soils",
+      "weather": "Cool season crop, 15°C–25°C",
+      "seeds": "Improved hybrids like Golden Acre, Pusa Mukta",
+      "fertilizers": "NPK 120:60:60 kg/ha",
+      "natural_manures": "FYM, compost, neem cake",
+      "process": [
+        "Nursery: Sow seeds in raised beds.",
+        "Transplanting: 25–30 day-old seedlings transplanted at 60 × 45 cm spacing.",
+        "Irrigation: Irrigate at 10–15 day intervals.",
+        "Weeding: Regular weeding and earthing up.",
+        "Fertilization: Apply manures and fertilizers in split doses.",
+        "Plant protection: Control aphids, diamondback moth, and black rot.",
+        "Harvesting: Harvest heads when compact and firm."
+      ]
+    },
+    {
+      "name": "Cauliflower",
+      "duration": "90–120 days",
+      "soil": "Fertile loamy soils, well-drained",
+      "weather": "Cool, moist climate, 15°C–20°C",
+      "seeds": "Varieties like Pusa Snowball, Early Kunwari",
+      "fertilizers": "NPK 100:50:50 kg/ha",
+      "natural_manures": "FYM, compost, neem cake",
+      "process": [
+        "Nursery raising: Sow seeds in raised beds.",
+        "Transplanting: Shift seedlings at 45 × 45 cm spacing.",
+        "Irrigation: Water every 7–10 days.",
+        "Blanching: Cover curds with leaves to keep white.",
+        "Fertilization: Apply manures before transplanting, split fertilizer doses.",
+        "Plant protection: Spray against diamondback moth and leaf spot.",
+        "Harvesting: Harvest curds when firm, white, and compact."
+      ]
+    },
+    {
+      "name": "Brinjal",
+      "duration": "120–150 days",
+      "soil": "Well-drained loamy soil rich in organic matter",
+      "weather": "Warm season, 22°C–30°C",
+      "seeds": "Varieties like Pusa Purple Long, Arka Navneet",
+      "fertilizers": "NPK 100:50:50 kg/ha",
+      "natural_manures": "FYM, compost, neem cake",
+      "process": [
+        "Nursery raising: Sow seeds in raised beds.",
+        "Transplanting: 30–35 day-old seedlings planted at 60 × 45 cm spacing.",
+        "Irrigation: Irrigate every 7–8 days.",
+        "Weeding: Regular weeding and hoeing.",
+        "Pruning: Remove side shoots and diseased plants.",
+        "Fertilization: Apply FYM before transplanting, split fertilizer doses later.",
+        "Plant protection: Spray against shoot and fruit borer, wilt.",
+        "Harvesting: Fruits harvested at tender stage before seeds harden."
+      ]
+    }
+  ],
+
+  "cereals": [
+    {
+      "name": "Wheat",
+      "duration": "120–150 days",
+      "soil": "Well-drained loamy or clay loam soils, rich in organic matter",
+      "weather": "Cool season crop, requires 10°C–25°C, bright sunlight during grain filling",
+      "seeds": "Improved varieties like HD-2967, PBW-343",
+      "fertilizers": "NPK 120:60:40 kg/ha",
+      "natural_manures": "FYM, compost, green manure",
+      "process": [
+        "Land preparation: 2–3 ploughings and harrowing.",
+        "Sowing: Drill seeds in rows 20 cm apart.",
+        "Irrigation: Provide 4–5 critical irrigations at crown root initiation, tillering, booting, heading, and grain filling stages.",
+        "Weeding: Regular weeding and application of pre-emergence herbicide.",
+        "Fertilization: Apply FYM before sowing, fertilizers in split doses.",
+        "Plant protection: Control rusts, smut, and aphids.",
+        "Harvesting: Harvest when grains are hard and moisture is around 20%."
+      ]
+    },
+    {
+      "name": "Rice",
+      "duration": "120–150 days",
+      "soil": "Clayey loam, alluvial soils, requires good water retention",
+      "weather": "Warm, humid climate, 20°C–35°C, needs standing water",
+      "seeds": "High-yielding varieties like IR-64, MTU-1010",
+      "fertilizers": "NPK 100:50:50 kg/ha",
+      "natural_manures": "Green manure, FYM, compost",
+      "process": [
+        "Nursery raising: Sow seeds in wet nursery beds.",
+        "Transplanting: 20–25 day-old seedlings transplanted at 20 × 15 cm spacing.",
+        "Irrigation: Maintain 3–5 cm standing water during crop growth.",
+        "Weeding: Manual or mechanical weeding at 20 and 40 days after transplanting.",
+        "Fertilization: Apply manures before puddling, fertilizers in 3 splits.",
+        "Plant protection: Spray against stem borer, blast, and sheath blight.",
+        "Harvesting: Harvest when grains are hard and golden yellow."
+      ]
+    },
+    {
+      "name": "Maize",
+      "duration": "90–120 days",
+      "soil": "Fertile well-drained loamy soils",
+      "weather": "Warm season crop, 18°C–27°C",
+      "seeds": "Hybrids like Ganga-5, Deccan-103",
+      "fertilizers": "NPK 120:60:40 kg/ha",
+      "natural_manures": "FYM, compost, vermicompost",
+      "process": [
+        "Land preparation: Fine tilth with ploughing and harrowing.",
+        "Sowing: Direct sowing at 60 × 25 cm spacing.",
+        "Irrigation: Provide irrigation at knee-high, tasseling, silking, and grain filling stages.",
+        "Weeding: Manual or chemical weeding after 20 and 40 days.",
+        "Fertilization: Apply manures before sowing, split fertilizers at 3 stages.",
+        "Plant protection: Spray against stem borer, downy mildew.",
+        "Harvesting: Harvest cobs when husks dry and grains harden."
+      ]
+    },
+    {
+      "name": "Barley",
+      "duration": "120–140 days",
+      "soil": "Light loamy to sandy loam soils",
+      "weather": "Cool and dry climate, 10°C–25°C",
+      "seeds": "Improved varieties like RD-2503, K-551",
+      "fertilizers": "NPK 60:40:40 kg/ha",
+      "natural_manures": "FYM, compost, crop residues",
+      "process": [
+        "Land preparation: 2–3 ploughings.",
+        "Sowing: Drill sowing in rows at 22 cm spacing.",
+        "Irrigation: Provide 2–3 irrigations at tillering and flowering stages.",
+        "Weeding: Manual or chemical weeding at 20–25 days.",
+        "Fertilization: Apply FYM before sowing, fertilizers at sowing and tillering.",
+        "Plant protection: Control aphids and powdery mildew.",
+        "Harvesting: Harvest when spikes turn golden yellow."
+      ]
+    },
+    {
+      "name": "Millet",
+      "duration": "80–100 days",
+      "soil": "Light sandy to loamy soils, drought tolerant",
+      "weather": "Warm season crop, 25°C–35°C",
+      "seeds": "Varieties like Bajra (HHB-67, ICTP-8203)",
+      "fertilizers": "NPK 60:30:20 kg/ha",
+      "natural_manures": "FYM, compost, green manure",
+      "process": [
+        "Land preparation: Ploughing and harrowing.",
+        "Sowing: Direct sowing at 45 × 15 cm spacing.",
+        "Irrigation: Mostly rainfed; irrigate at flowering if possible.",
+        "Weeding: Intercultural operations at 20 and 40 days.",
+        "Fertilization: Apply FYM before sowing, fertilizers at sowing.",
+        "Plant protection: Monitor for downy mildew and shoot fly.",
+        "Harvesting: Harvest when grains are hard and dry."
+      ]
+    },
+    {
+      "name": "Oats",
+      "duration": "120–140 days",
+      "soil": "Fertile loamy soils, well-drained",
+      "weather": "Cool climate, 15°C–25°C",
+      "seeds": "Varieties like Kent, OS-6",
+      "fertilizers": "NPK 80:40:20 kg/ha",
+      "natural_manures": "FYM, compost, crop residues",
+      "process": [
+        "Land preparation: Fine tilth with 2–3 ploughings.",
+        "Sowing: Drill sowing in rows at 20 cm spacing.",
+        "Irrigation: Provide 3–4 irrigations during crop growth.",
+        "Weeding: Intercultural and weeding operations.",
+        "Fertilization: Apply manures before sowing, fertilizers in split doses.",
+        "Plant protection: Control rusts and aphids.",
+        "Harvesting: Harvest when panicles are mature and yellow."
+      ]
+    },
+    {
+      "name": "Sorghum",
+      "duration": "100–120 days",
+      "soil": "Sandy loam to clay soils, drought tolerant",
+      "weather": "Warm season crop, 25°C–35°C",
+      "seeds": "Varieties like CSH-9, SPV-462",
+      "fertilizers": "NPK 80:40:40 kg/ha",
+      "natural_manures": "FYM, compost, crop residues",
+      "process": [
+        "Land preparation: Ploughing and harrowing.",
+        "Sowing: Direct sowing at 45 × 15 cm spacing.",
+        "Irrigation: Mostly rainfed; irrigate at flowering and grain filling stages if needed.",
+        "Weeding: Regular weeding at 20 and 40 days.",
+        "Fertilization: Apply manures before sowing, fertilizers in 2 splits.",
+        "Plant protection: Spray against shoot fly, stem borer, and smut.",
+        "Harvesting: Harvest when panicles are dry and grains are hard."
+      ]
+    },
+    {
+      "name": "Ragi",
+      "duration": "100–120 days",
+      "soil": "Loamy to clay loam soils, red soils",
+      "weather": "Warm, humid climate, 20°C–30°C",
+      "seeds": "Varieties like GPU-28, MR-1",
+      "fertilizers": "NPK 60:30:30 kg/ha",
+      "natural_manures": "FYM, compost, green leaf manure",
+      "process": [
+        "Nursery raising: Sow seeds in nursery beds.",
+        "Transplanting: 20–25 day-old seedlings at 25 × 10 cm spacing.",
+        "Irrigation: Provide irrigation at critical stages like tillering and grain filling.",
+        "Weeding: Intercultural operations at 20 and 40 days.",
+        "Fertilization: Apply FYM before sowing, fertilizers in 2 splits.",
+        "Plant protection: Monitor for blast disease and leaf spot.",
+        "Harvesting: Harvest when ear heads turn brown and grains are hard."
+      ]
+    }
+  ],
+
+  "Pulses": [
+    {
+      "name": "Lentil",
+      "duration": "100-110 days",
+      "process": [
+        "Select well-drained loamy soil with pH 6-7.",
+        "Plough 2–3 times to make a fine seedbed.",
+        "Sow seeds in rows with spacing of 30 cm between rows.",
+        "Provide light irrigation at flowering and pod formation stage.",
+        "Weed at 25–30 days after sowing.",
+        "Harvest when pods turn brown and dry under sun."
+      ],
+      "weather": "Cool and dry climate, temperature 18–25°C.",
+      "soil": "Loamy or clay loam soil, pH 6-7.",
+      "required_items": ["Seed drill", "Irrigation tools", "Weeders"],
+      "seeds": "20-30 kg per hectare",
+      "fertilizers": "10–15 kg Nitrogen, 40–60 kg Phosphorus per hectare",
+      "natural_manures": ["Farmyard manure (FYM)", "Compost", "Vermicompost"]
+    },
+    {
+      "name": "Chickpea",
+      "duration": "120-140 days",
+      "process": [
+        "Prepare field by 2-3 ploughings followed by harrowing.",
+        "Sow seeds at 30 cm row spacing and 10 cm plant spacing.",
+        "Irrigate only 2–3 times during critical stages (flowering and pod formation).",
+        "Control weeds at 25–30 days after sowing.",
+        "Harvest when 90% of pods mature and plants turn yellow."
+      ],
+      "weather": "Cool and dry climate, temperature 20–25°C.",
+      "soil": "Sandy loam to clay loam with pH 6-8.",
+      "required_items": ["Seed drill", "Sprayers", "Harvesting tools"],
+      "seeds": "80-100 kg per hectare",
+      "fertilizers": "20 kg Nitrogen, 40 kg Phosphorus per hectare",
+      "natural_manures": ["Cow dung manure", "Compost", "Biofertilizers"]
+    },
+    {
+      "name": "Green Gram",
+      "duration": "60-70 days",
+      "process": [
+        "Select sandy loam soil with good drainage.",
+        "Prepare land by ploughing 2-3 times.",
+        "Sow seeds at 25 cm row spacing.",
+        "Weeding at 20–25 days after sowing.",
+        "Harvest when 80% pods mature and turn black."
+      ],
+      "weather": "Warm climate, 25–35°C, moderate rainfall.",
+      "soil": "Sandy loam, well-drained.",
+      "required_items": ["Seed drill", "Sprayers", "Harvesting tools"],
+      "seeds": "10–15 kg per hectare",
+      "fertilizers": "15–20 kg Nitrogen, 40–50 kg Phosphorus per hectare",
+      "natural_manures": ["FYM", "Compost", "Green manuring"]
+    },
+    {
+      "name": "Pigeon Pea",
+      "duration": "150-210 days",
+      "process": [
+        "Deep ploughing before monsoon to prepare field.",
+        "Sow seeds with 60 cm row spacing.",
+        "Weed 2–3 times at regular intervals.",
+        "Irrigate at flowering and pod filling stage.",
+        "Harvest when pods turn brown and plants dry."
+      ],
+      "weather": "Warm climate, 20–35°C.",
+      "soil": "Well-drained loamy to black cotton soils.",
+      "required_items": ["Seed drill", "Plough", "Sprayers"],
+      "seeds": "12–15 kg per hectare",
+      "fertilizers": "20 kg Nitrogen, 40–60 kg Phosphorus per hectare",
+      "natural_manures": ["FYM", "Neem cake", "Vermicompost"]
+    },
+    {
+      "name": "Kidney Bean",
+      "duration": "90-120 days",
+      "process": [
+        "Prepare fine seedbed with good drainage.",
+        "Sow seeds with 45 cm row spacing and 10 cm plant spacing.",
+        "Provide irrigation during flowering and pod setting.",
+        "Weed at 20–25 days after sowing.",
+        "Harvest when pods mature and dry."
+      ],
+      "weather": "Cool climate, 18–24°C.",
+      "soil": "Loamy soil with pH 6–7.",
+      "required_items": ["Seed drill", "Sprayers", "Harvesting knife"],
+      "seeds": "25–30 kg per hectare",
+      "fertilizers": "20–25 kg Nitrogen, 40–60 kg Phosphorus per hectare",
+      "natural_manures": ["FYM", "Compost", "Bone meal"]
+    },
+    {
+      "name": "Black Gram",
+      "duration": "70-90 days",
+      "process": [
+        "Plough land and make seedbed.",
+        "Sow seeds at 30 cm row spacing.",
+        "Weed once at 20 days after sowing.",
+        "Irrigate during pod formation.",
+        "Harvest when pods turn black and dry."
+      ],
+      "weather": "Warm climate, 25–35°C.",
+      "soil": "Loamy soils with pH 6-7.",
+      "required_items": ["Seed drill", "Sprayers"],
+      "seeds": "15–20 kg per hectare",
+      "fertilizers": "15–20 kg Nitrogen, 40–50 kg Phosphorus per hectare",
+      "natural_manures": ["Cow dung", "Compost", "Green manure"]
+    },
+    {
+      "name": "Peas",
+      "duration": "90-100 days",
+      "process": [
+        "Prepare field with 2-3 ploughings.",
+        "Sow seeds in rows 30 cm apart.",
+        "Irrigate at flowering and pod development stage.",
+        "Provide staking support for tall varieties.",
+        "Harvest when pods turn green and mature."
+      ],
+      "weather": "Cool climate, 10–25°C.",
+      "soil": "Well-drained loamy soils, pH 6–7.",
+      "required_items": ["Seed drill", "Supports", "Harvesting knife"],
+      "seeds": "70–100 kg per hectare",
+      "fertilizers": "20 kg Nitrogen, 40–60 kg Phosphorus per hectare",
+      "natural_manures": ["FYM", "Compost", "Vermicompost"]
+    },
+    {
+      "name": "Horse Gram",
+      "duration": "100-120 days",
+      "process": [
+        "Plough land 2–3 times for seedbed preparation.",
+        "Sow seeds by broadcasting or line sowing.",
+        "No irrigation needed, mostly rainfed crop.",
+        "Weed once at 20–25 days after sowing.",
+        "Harvest when pods turn brown and dry."
+      ],
+      "weather": "Dry climate, 20–30°C.",
+      "soil": "Poor, dry soils, even marginal lands.",
+      "required_items": ["Seed drill", "Weeders"],
+      "seeds": "20–25 kg per hectare",
+      "fertilizers": "Minimal fertilizers required",
+      "natural_manures": ["FYM", "Compost"]
+    }
+  ],
+
+  "Oilseeds": [
+    {
+      "name": "Mustard",
+      "duration": "100-120 days",
+      "process": [
+        "Prepare well-ploughed seedbed with fine tilth.",
+        "Sow seeds in lines with 30 cm spacing between rows and 10 cm between plants.",
+        "Irrigate lightly after sowing and later during flowering and pod filling.",
+        "Weed once at 20-25 days after sowing.",
+        "Spray neem oil to control aphids and pests.",
+        "Harvest when 75% pods turn yellow and seeds are hard."
+      ],
+      "weather": "Cool and dry climate, temperature 15–25°C.",
+      "soil": "Well-drained loamy to sandy soils, pH 6–7.5.",
+      "required_items": ["Seed drill", "Sprayers", "Harvesting sickle"],
+      "seeds": "5-7 kg per hectare",
+      "fertilizers": "40 kg Nitrogen, 30 kg Phosphorus, 20 kg Potash per hectare",
+      "natural_manures": ["FYM", "Neem cake", "Compost"]
+    },
+    {
+      "name": "Sunflower",
+      "duration": "90-100 days",
+      "process": [
+        "Plough the field 2-3 times for fine tilth.",
+        "Sow seeds at 60 cm row spacing and 30 cm plant spacing.",
+        "Apply irrigation at flowering and grain filling stage.",
+        "Weed at 20 days after sowing.",
+        "Control sucking pests using neem-based sprays.",
+        "Harvest when back of sunflower head turns yellow and seeds are firm."
+      ],
+      "weather": "Warm climate, 20–30°C, requires bright sunshine.",
+      "soil": "Alluvial loamy soil, pH 6.5–7.5.",
+      "required_items": ["Seed drill", "Sprayers", "Threshers"],
+      "seeds": "8-10 kg per hectare",
+      "fertilizers": "40–60 kg Nitrogen, 40 kg Phosphorus per hectare",
+      "natural_manures": ["Compost", "FYM", "Green manure"]
+    },
+    {
+      "name": "Groundnut",
+      "duration": "110-120 days",
+      "process": [
+        "Prepare sandy loam soil with 2-3 ploughings.",
+        "Sow seeds at 30 cm row spacing and 15 cm plant spacing.",
+        "Provide irrigation at pegging and pod formation stage.",
+        "Remove weeds at 20 and 40 days after sowing.",
+        "Apply gypsum to promote pod formation.",
+        "Harvest when leaves turn yellow and pods mature underground."
+      ],
+      "weather": "Warm climate, 20–30°C, requires 500–700 mm rainfall.",
+      "soil": "Sandy loam soil, well-drained, pH 6–7.",
+      "required_items": ["Seed drill", "Plough", "Threshers"],
+      "seeds": "80–100 kg per hectare",
+      "fertilizers": "20–30 kg Nitrogen, 40–60 kg Phosphorus, 40–50 kg Potash per hectare",
+      "natural_manures": ["FYM", "Groundnut shells compost", "Neem cake"]
+    },
+    {
+      "name": "Sesame",
+      "duration": "85-100 days",
+      "process": [
+        "Prepare seedbed by 2–3 ploughings.",
+        "Sow seeds in rows 30 cm apart.",
+        "Weed at 20 days after sowing.",
+        "Provide irrigation during flowering and capsule formation stage.",
+        "Control leaf spot using neem sprays.",
+        "Harvest when leaves shed and capsules turn yellow."
+      ],
+      "weather": "Warm climate, 25–35°C, tolerates drought.",
+      "soil": "Sandy loam to clay loam soils, pH 5.5–8.",
+      "required_items": ["Seed drill", "Weeders", "Sickles"],
+      "seeds": "3–4 kg per hectare",
+      "fertilizers": "25 kg Nitrogen, 40 kg Phosphorus per hectare",
+      "natural_manures": ["FYM", "Compost", "Vermicompost"]
+    },
+    {
+      "name": "Castor",
+      "duration": "150-180 days",
+      "process": [
+        "Prepare deep well-ploughed soil before sowing.",
+        "Sow seeds at 90 cm spacing between rows and 60 cm between plants.",
+        "Apply irrigation during branching and flowering stage.",
+        "Weed 2–3 times at regular intervals.",
+        "Protect against leafhoppers using neem oil sprays.",
+        "Harvest when capsules dry and turn brown."
+      ],
+      "weather": "Warm and semi-arid climate, 20–30°C.",
+      "soil": "Black cotton soil and sandy loam, pH 6–8.",
+      "required_items": ["Seed drill", "Sprayers", "Harvesting tools"],
+      "seeds": "10–12 kg per hectare",
+      "fertilizers": "40 kg Nitrogen, 40 kg Phosphorus, 20 kg Potash per hectare",
+      "natural_manures": ["Neem cake", "FYM", "Organic compost"]
+    },
+    {
+      "name": "Linseed",
+      "duration": "100-120 days",
+      "process": [
+        "Plough land 2–3 times for fine tilth.",
+        "Sow seeds with 30 cm spacing between rows.",
+        "Provide irrigation at flowering and seed setting stage.",
+        "Weed once at 20–25 days after sowing.",
+        "Harvest when capsules turn brown and dry."
+      ],
+      "weather": "Cool climate, 15–25°C.",
+      "soil": "Loamy and clay soils with good drainage, pH 6–7.5.",
+      "required_items": ["Seed drill", "Weeders", "Sickles"],
+      "seeds": "20–25 kg per hectare",
+      "fertilizers": "20–25 kg Nitrogen, 40–50 kg Phosphorus per hectare",
+      "natural_manures": ["FYM", "Compost", "Bone meal"]
+    },
+    {
+      "name": "Soybean",
+      "duration": "90-110 days",
+      "process": [
+        "Prepare field with 2–3 ploughings and harrowing.",
+        "Sow seeds in rows 45 cm apart and 5 cm deep.",
+        "Apply irrigation during flowering and pod filling stage.",
+        "Weed twice at 20 and 40 days after sowing.",
+        "Protect crop from stem fly using neem oil sprays.",
+        "Harvest when pods turn yellow and leaves drop."
+      ],
+      "weather": "Warm climate, 20–30°C, requires moderate rainfall.",
+      "soil": "Well-drained loamy soils, pH 6–7.5.",
+      "required_items": ["Seed drill", "Sprayers", "Threshers"],
+      "seeds": "75–100 kg per hectare",
+      "fertilizers": "20–30 kg Nitrogen, 40–60 kg Phosphorus per hectare",
+      "natural_manures": ["FYM", "Compost", "Rhizobium inoculant"]
+    },
+    {
+      "name": "Safflower",
+      "duration": "120-140 days",
+      "process": [
+        "Prepare land with 2–3 ploughings before sowing.",
+        "Sow seeds at 45 cm spacing between rows and 20 cm between plants.",
+        "Irrigate at flowering and seed development stages.",
+        "Weed twice during early crop growth.",
+        "Control aphids and caterpillars using neem sprays.",
+        "Harvest when flower heads dry and seeds harden."
+      ],
+      "weather": "Cool and dry climate, 20–25°C.",
+      "soil": "Deep, well-drained loamy soils, pH 6–7.5.",
+      "required_items": ["Seed drill", "Sprayers", "Harvesting knife"],
+      "seeds": "15–20 kg per hectare",
+      "fertilizers": "40 kg Nitrogen, 40 kg Phosphorus per hectare",
+      "natural_manures": ["FYM", "Compost", "Green manure"]
+    }
+  ],
+
+  "CashCrops": [
+    {
+      "name": "Sugarcane",
+      "duration": "10-16 months",
+      "process": [
+        "Plough the field deeply 3–4 times to loosen the soil.",
+        "Apply FYM (farmyard manure) 20-25 tons per hectare before planting.",
+        "Plant setts (sugarcane cuttings) in furrows 1.2 meters apart.",
+        "Cover setts with soil and irrigate immediately.",
+        "Provide irrigation every 7–10 days during dry season.",
+        "Weed at 30, 60, and 90 days after planting.",
+        "Apply nitrogen, phosphorus, and potash fertilizers in split doses.",
+        "Control borers and aphids using neem-based sprays.",
+        "Harvest when cane is mature, usually 12-16 months after planting, when sugar content is high."
+      ],
+      "weather": "Hot and humid, temperature 20–30°C, annual rainfall 1000–1500 mm.",
+      "soil": "Deep, fertile loamy soil with good drainage, pH 6–7.5.",
+      "required_items": ["Plough", "Furrow maker", "Cane knives"],
+      "seeds": "Setts (cuttings) of sugarcane stalks",
+      "fertilizers": "150 kg Nitrogen, 60 kg Phosphorus, 60 kg Potash per hectare",
+      "natural_manures": ["FYM", "Compost", "Green manure"]
+    },
+    {
+      "name": "Coffee",
+      "duration": "3-4 years to first harvest, economic yield up to 25 years",
+      "process": [
+        "Select shaded slopes in high-rainfall areas for plantation.",
+        "Prepare pits (45x45x45 cm) filled with compost and soil mixture.",
+        "Plant coffee seedlings at the onset of monsoon with 2m spacing.",
+        "Provide shade trees to protect from direct sunlight.",
+        "Weed regularly and mulch soil to conserve moisture.",
+        "Irrigate lightly during dry months.",
+        "Prune plants annually to maintain shape and productivity.",
+        "Control berry borer and leaf rust with neem sprays.",
+        "Harvest ripe red berries by hand picking and process by pulping, fermentation, and drying."
+      ],
+      "weather": "Cool, humid climate with 1500–2500 mm rainfall, temperature 15–25°C.",
+      "soil": "Well-drained loamy soil, rich in organic matter, pH 6–6.5.",
+      "required_items": ["Shade trees", "Hand picking baskets", "Processing equipment"],
+      "seeds": "Coffee seedlings (arabica or robusta varieties)",
+      "fertilizers": "40–50 kg Nitrogen, 30 kg Phosphorus, 30 kg Potash per hectare",
+      "natural_manures": ["Compost", "FYM", "Mulch"]
+    },
+    {
+      "name": "Tea",
+      "duration": "3-4 years to first plucking, economic yield up to 40 years",
+      "process": [
+        "Select hilly slopes with good rainfall and drainage.",
+        "Prepare pits (45x45x45 cm) filled with topsoil and compost.",
+        "Plant tea seedlings or cuttings at spacing of 1.2m × 0.75m.",
+        "Provide shade and windbreaks for young plants.",
+        "Weed and mulch regularly to conserve soil moisture.",
+        "Apply fertilizers in 4–5 split doses per year.",
+        "Prune bushes every 3–4 years to maintain plucking table.",
+        "Pluck tender leaves and buds every 7–15 days.",
+        "Process harvested leaves by withering, rolling, fermenting, drying, and grading."
+      ],
+      "weather": "Humid climate with 150–300 cm rainfall, temperature 20–30°C.",
+      "soil": "Well-drained acidic soils, pH 4.5–5.5.",
+      "required_items": ["Pruning tools", "Plucking baskets", "Processing unit"],
+      "seeds": "Tea seedlings or cuttings",
+      "fertilizers": "Nitrogen-rich fertilizers (50–60 kg N per hectare annually)",
+      "natural_manures": ["Compost", "Green leaf manure", "FYM"]
+    },
+    {
+      "name": "Tobacco",
+      "duration": "100-130 days",
+      "process": [
+        "Prepare well-ploughed seedbed and sow tobacco seeds in nursery.",
+        "Transplant seedlings to main field after 35–40 days.",
+        "Maintain spacing of 60x45 cm between plants.",
+        "Apply fertilizers in 3 split doses.",
+        "Weed twice during early growth stages.",
+        "Irrigate lightly and avoid waterlogging.",
+        "Remove flower heads to encourage leaf growth.",
+        "Harvest mature leaves when they turn yellow-green.",
+        "Cure leaves in shade or smoke houses for proper quality."
+      ],
+      "weather": "Warm climate, 20–30°C, moderate rainfall 600–800 mm.",
+      "soil": "Light sandy loam, well-drained, pH 5.5–6.5.",
+      "required_items": ["Nursery trays", "Plough", "Curing chambers"],
+      "seeds": "Tiny seeds (0.5 g per hectare nursery)",
+      "fertilizers": "Nitrogen, Phosphorus, Potash in balanced doses",
+      "natural_manures": ["FYM", "Compost"]
+    },
+    {
+      "name": "Cotton",
+      "duration": "150-180 days",
+      "process": [
+        "Prepare soil by deep ploughing and harrowing.",
+        "Sow treated seeds at 75x30 cm spacing.",
+        "Provide irrigation at flowering and boll formation.",
+        "Weed 2–3 times during early crop stage.",
+        "Spray neem oil against bollworm and sucking pests.",
+        "Apply fertilizers in split doses for better yield.",
+        "Harvest cotton bolls when fully mature and burst open."
+      ],
+      "weather": "Warm climate, temperature 20–30°C, requires 600–1200 mm rainfall.",
+      "soil": "Black cotton soils and alluvial soils, pH 6–8.",
+      "required_items": ["Seed drill", "Sprayers", "Harvesting bags"],
+      "seeds": "15–20 kg per hectare",
+      "fertilizers": "60–80 kg Nitrogen, 30–40 kg Phosphorus, 30–40 kg Potash per hectare",
+      "natural_manures": ["FYM", "Neem cake", "Compost"]
+    },
+    {
+      "name": "Rubber",
+      "duration": "6-7 years to first tapping, productive life 25-30 years",
+      "process": [
+        "Select high rainfall, humid areas for plantation.",
+        "Prepare pits (75x75x75 cm) with soil and compost mixture.",
+        "Plant budded stumps or seedlings with 7x7 m spacing.",
+        "Maintain shade trees and cover crops in early years.",
+        "Weed and mulch regularly.",
+        "Apply fertilizers in split doses annually.",
+        "After 6–7 years, start tapping trees by making diagonal cuts in bark.",
+        "Collect latex in cups and process into sheets or blocks."
+      ],
+      "weather": "Hot and humid climate with 2000–3000 mm rainfall, 25–35°C.",
+      "soil": "Deep well-drained lateritic or alluvial soils, pH 4.5–6.5.",
+      "required_items": ["Tapping knives", "Cups", "Processing units"],
+      "seeds": "Budded stumps or seedlings",
+      "fertilizers": "Nitrogen, Phosphorus, Potash in split doses",
+      "natural_manures": ["Compost", "FYM", "Green manure"]
+    },
+    {
+      "name": "Jute",
+      "duration": "120-150 days",
+      "process": [
+        "Prepare field with 3–4 ploughings for fine tilth.",
+        "Sow seeds by broadcasting or in rows 25 cm apart.",
+        "Thin seedlings to maintain 10 cm spacing.",
+        "Weed once at 20–25 days after sowing.",
+        "Apply fertilizers in 2–3 split doses.",
+        "Irrigate as needed during dry periods.",
+        "Harvest plants at 120–150 days when they are 2–3 m tall.",
+        "Ret the harvested plants in water for fiber extraction."
+      ],
+      "weather": "Hot and humid climate, 24–35°C, rainfall 1500–2000 mm.",
+      "soil": "Alluvial soils rich in organic matter, pH 6–7.5.",
+      "required_items": ["Plough", "Sickles", "Water tanks for retting"],
+      "seeds": "4–5 kg per hectare",
+      "fertilizers": "40 kg Nitrogen, 20 kg Phosphorus, 20 kg Potash per hectare",
+      "natural_manures": ["FYM", "Compost", "Green manure"]
+    },
+    {
+      "name": "Indigo",
+      "duration": "3-4 months",
+      "process": [
+        "Prepare soil by ploughing and leveling.",
+        "Sow seeds at onset of monsoon with row spacing 30 cm.",
+        "Weed once at 20–25 days after sowing.",
+        "Apply organic manures to boost leaf growth.",
+        "Irrigate lightly during dry periods.",
+        "Harvest crop when plants are 1–2 m tall and full of leaves.",
+        "Process by fermenting plants in vats for dye extraction."
+      ],
+      "weather": "Warm and humid climate, temperature 20–30°C, rainfall 1000–1500 mm.",
+      "soil": "Light loamy soils with good drainage, pH 6–7.5.",
+      "required_items": ["Plough", "Sickles", "Fermentation vats"],
+      "seeds": "6–8 kg per hectare",
+      "fertilizers": "Low requirement – 20 kg Nitrogen, 20 kg Phosphorus per hectare",
+      "natural_manures": ["Compost", "FYM"]
+    }
+  ],
+
+
+
+  "Spices & Herbs": [
+    {
+      "name": "Chili",
+      "duration": "90–120 days",
+      "soil": "Well-drained loamy or sandy soil, pH 6–7",
+      "weather": "Warm and humid climate, 20–30°C",
+      "seeds": "Hybrid chili seeds",
+      "fertilizers": "NPK 40:20:40 kg/acre",
+      "natural_manures": "Farmyard manure, neem cake, compost",
+      "required_items": "Irrigation system, seedling trays, organic pesticides",
+      "process": [
+        "Step 1: Seed Selection – Choose hybrid, disease-resistant chili varieties.",
+        "Step 2: Nursery Preparation – Prepare seedbeds, treat seeds with Trichoderma for fungal protection.",
+        "Step 3: Transplanting – After 25–30 days, transplant seedlings with spacing 45×30 cm.",
+        "Step 4: Field Preparation – Plough field, apply compost (5–6 tons/acre), irrigate before transplanting.",
+        "Step 5: Fertilization – Apply basal dose of FYM + NPK, follow top-dressing with urea after flowering.",
+        "Step 6: Irrigation – Light irrigation every 8–10 days; avoid waterlogging.",
+        "Step 7: Weed & Pest Control – Mulching or hand weeding; spray neem oil for aphids/mites.",
+        "Step 8: Harvesting – Harvest green chilies after 70–80 days; red chilies after drying on plant."
+      ]
+    },
+    {
+      "name": "Coriander",
+      "duration": "75–90 days",
+      "soil": "Light loamy soil, well-drained, pH 6–8",
+      "weather": "Cool season crop, 20–25°C ideal",
+      "seeds": "Split coriander seeds",
+      "fertilizers": "NPK 20:10:10 kg/acre",
+      "natural_manures": "Cow dung, compost, green manure",
+      "required_items": "Sprayer, irrigation system, seed drill",
+      "process": [
+        "Step 1: Soil Preparation – Plough and harrow field; add compost or FYM (2 tons/acre).",
+        "Step 2: Seed Treatment – Crush coriander seeds lightly into halves for better germination.",
+        "Step 3: Sowing – Sow directly in rows with spacing 30 cm apart.",
+        "Step 4: Irrigation – Light irrigation immediately after sowing, then at 10–15 day intervals.",
+        "Step 5: Fertilization – Apply small doses of nitrogen after 30 days of growth.",
+        "Step 6: Weeding – Perform hand weeding twice during crop growth.",
+        "Step 7: Harvesting – Harvest green leaves at 30–40 days, seeds at 90 days."
+      ]
+    },
+    {
+      "name": "Mint",
+      "duration": "90–100 days",
+      "soil": "Moist, loamy soil rich in organic matter",
+      "weather": "Warm and humid, 18–30°C",
+      "seeds": "Mint suckers/roots (vegetative propagation)",
+      "fertilizers": "NPK 30:20:20 kg/acre",
+      "natural_manures": "Compost, cow dung, vermicompost",
+      "required_items": "Irrigation channels, organic sprays, harvesting knife",
+      "process": [
+        "Step 1: Propagation – Use root suckers or stolons instead of seeds.",
+        "Step 2: Field Preparation – Add compost (8–10 tons/acre), plough, and level field.",
+        "Step 3: Planting – Plant root suckers at 30×30 cm spacing.",
+        "Step 4: Irrigation – Requires frequent irrigation every 7–10 days.",
+        "Step 5: Fertilization – Apply FYM at sowing, NPK as top-dressing during vegetative growth.",
+        "Step 6: Weed & Pest Management – Mulching controls weeds; spray neem oil for pests.",
+        "Step 7: Harvesting – Cut leaves 3–4 times during season, starting at 90 days."
+      ]
+    },
+    {
+      "name": "Turmeric",
+      "duration": "7–9 months",
+      "soil": "Fertile loamy or alluvial soil, pH 5–7",
+      "weather": "Warm and humid, 20–35°C, high rainfall",
+      "seeds": "Turmeric rhizomes",
+      "fertilizers": "NPK 60:30:90 kg/acre",
+      "natural_manures": "FYM 10 tons/acre, neem cake, compost",
+      "required_items": "Rhizomes, irrigation, mulching material",
+      "process": [
+        "Step 1: Land Preparation – Plough land 3–4 times, make raised beds.",
+        "Step 2: Seed Selection – Select healthy rhizomes, treat with fungicides or Trichoderma.",
+        "Step 3: Planting – Place rhizomes 5–7 cm deep, spacing 30×20 cm.",
+        "Step 4: Mulching – Apply green leaves or straw mulch after planting.",
+        "Step 5: Irrigation – Provide light irrigation every 7–10 days.",
+        "Step 6: Fertilization – Apply FYM + NPK in split doses after 45 and 90 days.",
+        "Step 7: Weed & Pest Control – Hand weeding, apply neem oil or bio-fungicides.",
+        "Step 8: Harvesting – After 8–9 months when leaves turn yellow, dig out rhizomes and cure."
+      ]
+    },
+    {
+      "name": "Black Pepper",
+      "duration": "3–4 years (perennial)",
+      "soil": "Well-drained loamy soil, rich in organic matter",
+      "weather": "Warm humid tropics, 20–30°C",
+      "seeds": "Rooted cuttings",
+      "fertilizers": "NPK 50:50:100 g per vine/year",
+      "natural_manures": "FYM, compost, green leaf manure",
+      "required_items": "Support poles, shade trees, irrigation",
+      "process": [
+        "Step 1: Propagation – Use rooted cuttings of high-yielding varieties.",
+        "Step 2: Planting – Plant near support trees/poles at 2×2 m spacing.",
+        "Step 3: Manuring – Apply compost + NPK twice yearly.",
+        "Step 4: Training & Pruning – Guide vines onto supports, prune excess branches.",
+        "Step 5: Irrigation – Provide light irrigation during dry months.",
+        "Step 6: Pest Control – Use neem-based sprays against root grubs and mealy bugs.",
+        "Step 7: Harvesting – Pepper spikes harvested when berries turn red; dried to produce black pepper."
+      ]
+    },
+    {
+      "name": "Cardamom",
+      "duration": "2–3 years for first yield",
+      "soil": "Forest loamy soil, rich in humus",
+      "weather": "Cool, humid, 15–30°C",
+      "seeds": "Cardamom suckers (vegetative propagation)",
+      "fertilizers": "NPK 40:20:60 g per clump/year",
+      "natural_manures": "FYM, compost, green leaf mulch",
+      "required_items": "Shade trees, irrigation, mulching material",
+      "process": [
+        "Step 1: Site Selection – Grows best under forest shade.",
+        "Step 2: Propagation – Divide rhizomes into clumps and plant.",
+        "Step 3: Planting – Space 2×2 m apart, provide adequate shade.",
+        "Step 4: Mulching – Apply leaf mulch for moisture retention.",
+        "Step 5: Fertilization – Apply compost and NPK in 2–3 split doses.",
+        "Step 6: Irrigation – Light irrigation needed during summer.",
+        "Step 7: Pest Management – Use bio-pesticides against thrips and borers.",
+        "Step 8: Harvesting – After 2–3 years, capsules harvested every 30–40 days."
+      ]
+    },
+    {
+      "name": "Clove",
+      "duration": "6–7 years for first yield",
+      "soil": "Rich loamy soil with good drainage",
+      "weather": "Warm, humid climate, 20–30°C",
+      "seeds": "Clove seedlings",
+      "fertilizers": "NPK 200 g/tree/year",
+      "natural_manures": "FYM, compost, neem cake",
+      "required_items": "Shade trees, irrigation, seedling bags",
+      "process": [
+        "Step 1: Nursery – Raise seedlings from fresh clove seeds.",
+        "Step 2: Planting – Transplant seedlings at 2–3 years into field at 6×6 m spacing.",
+        "Step 3: Fertilization – Apply compost + NPK annually.",
+        "Step 4: Irrigation – Water young plants regularly, mature trees occasionally.",
+        "Step 5: Mulching – Apply organic mulch around trees.",
+        "Step 6: Pest Control – Spray neem oil for leaf-eating pests.",
+        "Step 7: Harvesting – After 6–7 years, harvest unopened flower buds (cloves)."
+      ]
+    },
+    {
+      "name": "Fenugreek",
+      "duration": "90–110 days",
+      "soil": "Well-drained loamy soil, pH 6–7",
+      "weather": "Cool season crop, 15–25°C",
+      "seeds": "Fenugreek seeds",
+      "fertilizers": "NPK 20:10:10 kg/acre",
+      "natural_manures": "Compost, cow dung, vermicompost",
+      "required_items": "Seed drill, irrigation system, sprayer",
+      "process": [
+        "Step 1: Soil Preparation – Plough land, add compost or FYM (2 tons/acre).",
+        "Step 2: Sowing – Directly sow seeds in rows with 30 cm spacing.",
+        "Step 3: Irrigation – Light irrigation after sowing, then every 10–12 days.",
+        "Step 4: Fertilization – Apply small doses of nitrogen at 30 days.",
+        "Step 5: Weed Management – Hand weeding at 20 and 40 days.",
+        "Step 6: Pest Control – Spray neem oil to control aphids.",
+        "Step 7: Harvesting – Harvest leaves at 30–40 days, seeds at 100 days."
+      ]
+    }
+  ]
+
+}

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farm Dashboard</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    header i {
+      margin-right: 10px;
+      color: green;
+    }
+
+    /* ✅ Unified Search */
+    .topbar {
+      background: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 8px 12px;
+      width: 100%;
+      max-width: 600px;
+      background: #fff;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 14px;
+    }
+
+    .search-box button {
+      background: none;
+      border: none;
+      margin-left: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      color: #555;
+    }
+
+    /* Section */
+    .section-title {
+      margin: 20px 16px 10px;
+      font-weight: 600;
+      color: #333;
+      border-left: 5px solid green;
+      padding-left: 10px;
+      font-size: 1.1rem;
+    }
+
+    .crop-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      padding: 10px 16px;
+    }
+
+    .crop-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .crop-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .crop-icon { font-size: 2rem; margin-bottom: 8px; }
+    .crop-name { font-weight: 600; margin-bottom: 4px; }
+    .crop-time { font-size: 0.9rem; color: #666; margin-bottom: 6px; }
+    .crop-price { color: green; font-weight: 600; margin-bottom: 4px; }
+    .crop-trend { font-size: 0.85rem; color: #444; }
+
+    @media (max-width: 600px) {
+      .crop-row { grid-template-columns: 1fr; }
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+
+    .bottom-nav a {
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .bottom-nav a.active { color: green; font-weight: bold; }
+  </style>
+</head>
+
+<script>
+// Voice Search using Web Speech API
+function startVoiceSearch() {
+  if (!('webkitSpeechRecognition' in window)) {
+    alert("Sorry, your browser doesn't support speech recognition.");
+    return;
+  }
+  const recognition = new webkitSpeechRecognition();
+  recognition.lang = "en-IN";
+  recognition.start();
+
+  recognition.onresult = function(event) {
+  document.getElementById("searchInput").value = event.results[0][0].transcript;
+  document.getElementById("searchForm").submit();
+};
+
+}
+
+// Image (Lens) Search – simulate upload
+function startLensSearch() {
+  document.getElementById("lensInput").click();
+}
+function handleLensFile(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const formData = new FormData();
+  formData.append("image", file);
+
+  fetch("/detect-crop", {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.crop) {
+      alert("🌱 Detected Crop: " + data.crop);
+
+      // OPTIONAL: auto-search detected crop
+      document.getElementById("searchInput").value = data.crop;
+      document.getElementById("searchForm").submit();
+    } else {
+      alert("❌ Could not detect crop");
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    alert("⚠️ Server error during detection");
+  });
+}
+
+</script>
+
+<body>
+<!-- Header -->
+  <header>
+    <i class="fa-solid fa-leaf"></i> Farm Dashboard
+  </header>
+
+  <!-- Search bar -->
+  <div class="topbar">
+    <form id="searchForm" method="get" action="{{ url_for('search') }}" class="search-box">
+  <input type="text" id="searchInput" name="q" placeholder="Search crops, ask questions, or get advice...">
+
+  <!-- Voice -->
+  <button type="button" title="Voice" onclick="startVoiceSearch()">
+    <i class="fas fa-microphone"></i>
+  </button>
+
+  <!-- Lens -->
+  <input type="file" id="lensInput" style="display:none" accept="image/*" onchange="handleLensFile(event)">
+  <button type="button" title="Lens" onclick="startLensSearch()">
+    <i class="fas fa-camera"></i>
+  </button>
+
+  <!-- Search -->
+  <button type="submit" title="Search">
+    <i class="fas fa-search"></i>
+  </button>
+</form>
+
+  </div>
+
+  <div class="container">
+  <!-- Fruits -->
+  <div class="section-title">Fruits</div>
+  <div class="crop-row">
+    <div class="crop-card"><i class="fa-solid fa-apple-whole crop-icon" style="color: orange;"></i><div class="crop-name">Mango</div><div class="crop-time">3-5 years</div><div class="crop-price">₹4500/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Mango">
+    <i class="fa-solid fa-bookmark"></i> Save
+  </button></div>        
+    <div class="crop-card"><i class="fa-solid fa-lemon crop-icon" style="color: goldenrod;"></i><div class="crop-name">Banana</div><div class="crop-time">11-15 months</div><div class="crop-price">₹2800/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Banana">
+    <i class="fa-solid fa-bookmark"></i> Save
+  </button></div>
+    <div class="crop-card"><i class="fa-solid fa-apple-whole crop-icon" style="color: red;"></i><div class="crop-name">Apple</div><div class="crop-time">6-8 years</div><div class="crop-price">₹8000/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Apple">
+    <i class="fa-solid fa-bookmark"></i> Save
+  </button></div>
+    <div class="crop-card"><i class="fa-solid fa-lemon crop-icon" style="color: pink;"></i><div class="crop-name">Guava</div><div class="crop-time">2-4 years</div><div class="crop-price">₹3500/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Guava">
+    <i class="fa-solid fa-bookmark"></i> Save
+  </button></div>
+    <div class="crop-card"><i class="fa-solid fa-grapevine crop-icon" style="color: purple;"></i><div class="crop-name">Grapes</div><div class="crop-time">2-3 years</div><div class="crop-price">₹5000/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Grapes">
+    <i class="fa-solid fa-bookmark"></i> Save
+  </button></div>
+    <div class="crop-card"><i class="fa-solid fa-lemon crop-icon" style="color: yellow;"></i><div class="crop-name">Papaya</div><div class="crop-time">9-12 months</div><div class="crop-price">₹2800/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Papaya">
+    <i class="fa-solid fa-bookmark"></i> Save
+  </button></div>
+    <div class="crop-card"><i class="fa-solid fa-lemon crop-icon" style="color: red;"></i><div class="crop-name">Pomegranate</div><div class="crop-time">3-4 years</div><div class="crop-price">₹6000/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Pomegranate">
+    <i class="fa-solid fa-bookmark"></i> Save
+  </button></div>
+    <div class="crop-card"><i class="fa-solid fa-lemon crop-icon" style="color: darkred;"></i><div class="crop-name">Strawberry</div><div class="crop-time">4-6 months</div><div class="crop-price">₹12000/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Strawberry">
+    <i class="fa-solid fa-bookmark"></i> Save
+  </button></div>
+  </div>
+<!-- Vegetables -->
+<div class="section-title">Vegetables</div>
+<div class="crop-row">
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: green;"></i><div class="crop-name">Tomato</div><div class="crop-time">70-90 days</div><div class="crop-price">₹2500/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Tomato">
+    <i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-carrot crop-icon" style="color: orange;"></i><div class="crop-name">Carrot</div><div class="crop-time">70-80 days</div><div class="crop-price">₹3000/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Carrot"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-leaf crop-icon" style="color: darkgreen;"></i><div class="crop-name">Spinach</div><div class="crop-time">30-40 days</div><div class="crop-price">₹2000/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Spinach"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-pepper-hot crop-icon" style="color: red;"></i><div class="crop-name">Chili</div><div class="crop-time">120-150 days</div><div class="crop-price">₹7000/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Chili"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-onion crop-icon" style="color: purple;"></i><div class="crop-name">Onion</div><div class="crop-time">100-120 days</div><div class="crop-price">₹2500/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Onion"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-lemon crop-icon" style="color: yellowgreen;"></i><div class="crop-name">Cabbage</div><div class="crop-time">70-90 days</div><div class="crop-price">₹1800/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Cabbage"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-lemon crop-icon" style="color: goldenrod;"></i><div class="crop-name">Cauliflower</div><div class="crop-time">60-100 days</div><div class="crop-price">₹2000/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Cauliflower"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-pepper-hot crop-icon" style="color: darkred;"></i><div class="crop-name">Brinjal</div><div class="crop-time">120-150 days</div><div class="crop-price">₹2200/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Brinjal"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+</div>
+<!-- Cereals -->
+<div class="section-title">Cereals</div>
+<div class="crop-row">
+  <div class="crop-card"><i class="fa-solid fa-wheat-awn crop-icon" style="color: brown;"></i><div class="crop-name">Wheat</div><div class="crop-time">120 days</div><div class="crop-price">₹2200/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Wheat"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: limegreen;"></i><div class="crop-name">Rice</div><div class="crop-time">150 days</div><div class="crop-price">₹1900/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Rice"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: goldenrod;"></i><div class="crop-name">Maize</div><div class="crop-time">90-100 days</div><div class="crop-price">₹1800/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Maize"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: darkorange;"></i><div class="crop-name">Barley</div><div class="crop-time">120-150 days</div><div class="crop-price">₹2000/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Barley"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: sienna;"></i><div class="crop-name">Millet</div><div class="crop-time">60-90 days</div><div class="crop-price">₹2200/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Millet"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: darkgreen;"></i><div class="crop-name">Oats</div><div class="crop-time">70-100 days</div><div class="crop-price">₹2500/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Oats"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: teal;"></i><div class="crop-name">Sorghum</div><div class="crop-time">110-120 days</div><div class="crop-price">₹2300/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Sorghum"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: olive;"></i><div class="crop-name">Ragi</div><div class="crop-time">120 days</div><div class="crop-price">₹2400/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Ragi"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+</div>
+<!-- Pulses -->
+<div class="section-title">Pulses</div>
+<div class="crop-row">
+  <div class="crop-card"><i class="fa-solid fa-circle-dot crop-icon" style="color: purple;"></i><div class="crop-name">Lentil</div><div class="crop-time">100-110 days</div><div class="crop-price">₹6000/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Lentil"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-circle-dot crop-icon" style="color: darkred;"></i><div class="crop-name">Chickpea</div><div class="crop-time">90-100 days</div><div class="crop-price">₹5500/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Chickpea"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-circle-dot crop-icon" style="color: green;"></i><div class="crop-name">Green Gram</div><div class="crop-time">60-70 days</div><div class="crop-price">₹7000/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Green Gram"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-circle-dot crop-icon" style="color: orange;"></i><div class="crop-name">Pigeon Pea</div><div class="crop-time">120-180 days</div><div class="crop-price">₹8000/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Pigeon Pea"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-circle-dot crop-icon" style="color: teal;"></i><div class="crop-name">Kidney Bean</div><div class="crop-time">100-140 days</div><div class="crop-price">₹7500/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Kidney Bean"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-circle-dot crop-icon" style="color: goldenrod;"></i><div class="crop-name">Black Gram</div><div class="crop-time">70-90 days</div><div class="crop-price">₹7200/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Black Gram"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-circle-dot crop-icon" style="color: blue;"></i><div class="crop-name">Peas</div><div class="crop-time">60-70 days</div><div class="crop-price">₹6500/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Peas"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-circle-dot crop-icon" style="color: brown;"></i><div class="crop-name">Horse Gram</div><div class="crop-time">100 days</div><div class="crop-price">₹6000/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Horse Gram"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+</div>
+<!-- Oilseeds -->
+<div class="section-title">Oilseeds</div>
+<div class="crop-row">
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: goldenrod;"></i><div class="crop-name">Mustard</div><div class="crop-time">110-140 days</div><div class="crop-price">₹4800/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Mustard"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-sun crop-icon" style="color: yellow;"></i><div class="crop-name">Sunflower</div><div class="crop-time">80-120 days</div><div class="crop-price">₹5200/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Sunflower"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: brown;"></i><div class="crop-name">Groundnut</div><div class="crop-time">120-150 days</div><div class="crop-price">₹4500/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Groundnut"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: grey;"></i><div class="crop-name">Sesame</div><div class="crop-time">90-120 days</div><div class="crop-price">₹5000/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Sesame"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: darkgreen;"></i><div class="crop-name">Castor</div><div class="crop-time">150-180 days</div><div class="crop-price">₹4700/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Castor"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: pink;"></i><div class="crop-name">Linseed</div><div class="crop-time">100-120 days</div><div class="crop-price">₹5200/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Linseed"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: teal;"></i><div class="crop-name">Soybean</div><div class="crop-time">90-120 days</div><div class="crop-price">₹4800/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Soybean"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: orange;"></i><div class="crop-name">Safflower</div><div class="crop-time">120-140 days</div><div class="crop-price">₹5000/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Safflower"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+</div>
+<!-- Cash Crops -->
+<div class="section-title">Cash Crops</div>
+<div class="crop-row">
+  <div class="crop-card"><i class="fa-solid fa-cubes crop-icon" style="color: brown;"></i><div class="crop-name">Sugarcane</div><div class="crop-time">12-18 months</div><div class="crop-price">₹3000/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Sugarcane"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-coffee crop-icon" style="color: darkbrown;"></i><div class="crop-name">Coffee</div><div class="crop-time">3-4 years</div><div class="crop-price">₹15000/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Coffee"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-mug-hot crop-icon" style="color: brown;"></i><div class="crop-name">Tea</div><div class="crop-time">3-5 years</div><div class="crop-price">₹12000/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Tea"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-smoking crop-icon" style="color: grey;"></i><div class="crop-name">Tobacco</div><div class="crop-time">90-120 days</div><div class="crop-price">₹10000/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Tobacco"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-cube crop-icon" style="color: green;"></i><div class="crop-name">Cotton</div><div class="crop-time">150-180 days</div><div class="crop-price">₹6000/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Cotton"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-bottle-droplet crop-icon" style="color: black;"></i><div class="crop-name">Rubber</div><div class="crop-time">6-7 years</div><div class="crop-price">₹18000/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Rubber"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-mound crop-icon" style="color: darkgreen;"></i><div class="crop-name">Jute</div><div class="crop-time">120-150 days</div><div class="crop-price">₹5000/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Jute"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-ship crop-icon" style="color: blue;"></i><div class="crop-name">Indigo</div><div class="crop-time">150-180 days</div><div class="crop-price">₹7500/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Indigo"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+</div>
+<!-- Spices & Herbs -->
+<div class="section-title">Spices & Herbs</div>
+<div class="crop-row">
+  <div class="crop-card"><i class="fa-solid fa-pepper-hot crop-icon" style="color: red;"></i><div class="crop-name">Chili</div><div class="crop-time">120-150 days</div><div class="crop-price">₹8000/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Chili"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: green;"></i><div class="crop-name">Coriander</div><div class="crop-time">40-45 days</div><div class="crop-price">₹4000/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Coriander"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-leaf crop-icon" style="color: darkgreen;"></i><div class="crop-name">Mint</div><div class="crop-time">90-100 days</div><div class="crop-price">₹5000/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Mint"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-tree crop-icon" style="color: goldenrod;"></i><div class="crop-name">Turmeric</div><div class="crop-time">200-300 days</div><div class="crop-price">₹9000/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Turmeric"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-seedling crop-icon" style="color: black;"></i><div class="crop-name">Black Pepper</div><div class="crop-time">3-4 years</div><div class="crop-price">₹35000/quintal</div><div class="crop-trend">↘ Falling</div><button class="save-btn" data-crop="Black Pepper"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-lemon crop-icon" style="color: pink;"></i><div class="crop-name">Cardamom</div><div class="crop-time">2-3 years</div><div class="crop-price">₹120000/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Cardamom"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-star crop-icon" style="color: orange;"></i><div class="crop-name">Clove</div><div class="crop-time">6-8 years</div><div class="crop-price">₹70000/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Clove"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+  <div class="crop-card"><i class="fa-solid fa-mortar-pestle crop-icon" style="color: brown;"></i><div class="crop-name">Fenugreek</div><div class="crop-time">110-120 days</div><div class="crop-price">₹5500/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Fenugreek"><i class="fa-solid fa-bookmark"></i> Save</button></div>
+</div>   
+<!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <a href="{{url_for('home')}}">🏠<br>Home</a>
+    <a href="{{url_for('crops')}}">🌱<br>Crops</a>
+    <a href="{{url_for('soil')}}">⛰<br>Soil</a>
+    <a href="{{url_for('market')}}">📈<br>Market</a>
+    <a href="{{url_for('buyhere')}}">🛒<br>Buy Here</a>
+    <a href="{{url_for('Sell')}}">💲<br>Sell</a>
+    <a href="{{url_for('help')}}" class="active">❓<br>Help</a> 
+  </div>
+      <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+<script>
+document.querySelectorAll(".save-btn").forEach(btn => {
+  btn.addEventListener("click", function () {
+    const crop = this.dataset.crop;
+    const button = this;
+
+    fetch("/save-crop", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: `crop=${encodeURIComponent(crop)}`
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === "success") {
+        button.classList.add("saved");
+        button.innerHTML = `<i class="fa-solid fa-check"></i> Saved`;
+        button.disabled = true;
+
+      } else {
+        alert("Failed to save crop");
+      }
+    })
+    .catch(() => alert("Server error"));
+  });
+});
+
+</script>
+</body>
+</html>

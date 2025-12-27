@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Permissions - Agro Sahayak Bhasha</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .permissions-card {
+      max-width: 450px;
+      margin: 60px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .permissions-card h2 {
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+    .perm-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .perm-buttons button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: white;
+      color: #333;
+      transition: all 0.2s;
+    }
+    .perm-buttons button i {
+      color: #2e7d32;
+      font-size: 18px;
+    }
+    .perm-buttons button:hover {
+      background: #2e7d32;
+      color: #fff;
+    }
+    .perm-buttons button:hover i {
+      color: #fff;
+    }
+    .allow-btn {
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px;
+      background: #2e7d32;
+      color: #2e7d32;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .allow-btn:hover {
+      background: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+  <div class="permissions-card">
+    <h2> Permissions Required </h2>
+    <p>We need these permissions to provide you the best agricultural advice</p>
+
+    <form method="post" action="{{url_for('home')}}">
+      <div class="perm-buttons">
+        <button type="button"><i class="fa-solid fa-camera"></i>  Camera</button>
+        <p>To capture crop images for disease detection</p>
+        <button type="button"><i class="fa-solid fa-microphone"></i>  Microphone</button>
+        <p>To enable voice commands and guidance</p>
+        <button type="button"><i class="fa-solid fa-image"></i>  Photos</button>
+        <p>To access existing crop images</p>
+        <button type="button"><i class="fa-solid fa-envelope"></i>  SMS</button>
+        <p>To send important agricultural alerts </p>
+        <button type="button"><i class="fa-solid fa-bell"></i>  Notifications</button>
+        <p>For timely farming reminders</p>
+        <button type="button"><i class="fa-solid fa-location-dot"></i>  Location</button>
+        <p>For providing and local crop information </p>
+              <button type="submit">Allow All Permissions</button>
+
+      </div>
+    </form>
+  </div>
+</body>
+</html>

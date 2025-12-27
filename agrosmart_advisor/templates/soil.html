@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soil Analysis</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: "Inter", sans-serif; background: #fafafa; margin: 0; }
+    header { padding: 16px; font-size: 1.3rem; font-weight: 600; display: flex; align-items: center; }
+    header i { margin-right: 10px; color: green; }
+    .section-title { margin: 20px 16px 10px; font-weight: 600; font-size: 1.1rem; border-left: 5px solid green; padding-left: 10px; color: #333; }
+    .analysis-row { display: flex; gap: 16px; padding: 10px 16px; }
+    .box { flex: 1; background: #f4f4f4; border-radius: 12px; padding: 20px; text-align: center; }
+    .box.green { background: #2d8a3f; color: white; }
+    .box i { font-size: 2rem; margin-bottom: 10px; }
+    .box button { margin-top: 10px; padding: 10px; border: none; border-radius: 8px; cursor: pointer; width: 100%; }
+    .weather { background: #2d8a3f; color: white; padding: 20px; margin: 16px; border-radius: 12px; display: flex; justify-content: space-around; font-weight: 600; }
+    .soil-card { background: #fff; border-radius: 12px; padding: 15px; margin: 10px 16px; box-shadow: 0 3px 8px rgba(0,0,0,0.08); cursor: pointer; display: flex; align-items: center; gap: 12px; }
+    .soil-icon { font-size: 2rem; }
+    .soil-name { font-weight: 600; margin-bottom: 5px; }
+    .soil-ph { font-size: 0.9rem; color: #666; }
+    .soil-crops { margin-top: 8px; font-size: 0.85rem; }
+    .soil-crops span { background: #eaeaea; padding: 3px 8px; border-radius: 6px; margin-right: 5px; font-size: 0.8rem; }
+    .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #ddd; display: flex; justify-content: space-around; padding: 10px 0; }
+    .bottom-nav a { text-align: center; text-decoration: none; color: #333; font-size: 14px; }
+    .bottom-nav a.active { color: green; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <header><i class="fa-solid fa-seedling"></i> Soil Analysis</header>
+<div class="section-title">Crop Analysis (4-Box System)</div>
+<div class="analysis-row">
+  <!-- ✅ Open Camera -->
+  <div class="box green">
+    <i class="fa-solid fa-camera"></i>
+    <p>Camera</p>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+     <input type="file" name="file" accept="image/*" capture="environment"
+       style="display:none;"
+       id="cameraInput"
+       onchange="this.form.submit()">
+<button type="button" onclick="cameraInput.click()">Open Camera</button>
+
+    </form>
+  </div>
+
+  <!-- ✅ Browse Files -->
+  <div class="box">
+    <i class="fa-solid fa-upload"></i>
+    <p>Upload</p>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" style="display:none;" id="fileInput" onchange="this.form.submit()">
+      <button type="button" onclick="fileInput.click()">Browse Files</button>
+    </form>
+  </div>
+</div>
+
+  
+  <div class="section-title">Current Weather Conditions</div>
+  <div class="weather">
+    <div>28°C<br><small>Temperature</small></div>
+    <div>72%<br><small>Humidity</small></div>
+    <div>65%<br><small>Soil Moisture</small></div>
+  </div>
+
+  <div class="section-title">Soil Types & Suitability</div>
+<div class="soil-card" data-href="{{ url_for('soil_detail_clay') }}">
+
+<script>
+  document.querySelectorAll('.soil-card').forEach(card => {
+    card.addEventListener('click', () => {
+      window.location.href = card.dataset.href;
+    });
+  });
+</script>
+  
+  <i class="fa-solid fa-mountain soil-icon" style="color:brown;"></i>
+    <div>
+      <div class="soil-name">Clay Soil</div>
+      <div class="soil-ph">pH: 6.0-7.5</div>
+      <div class="soil-crops">Best crops: <span>Rice</span><span>Sugarcane</span><span>Cotton</span></div>
+    </div>
+  </div>
+
+<div class="soil-card" data-href="{{ url_for('soil_detail_sandy') }}">
+<script>
+  document.querySelectorAll('.soil-card').forEach(card => {
+    card.addEventListener('click', () => {
+      window.location.href = card.dataset.href;
+    });
+  });
+</script>
+
+  <i class="fa-solid fa-water soil-icon" style="color:goldenrod;"></i>
+    <div>
+      <div class="soil-name">Sandy Soil</div>
+      <div class="soil-ph">pH: 5.5-7.0</div>
+      <div class="soil-crops">Best crops: <span>Carrots</span><span>Peanuts</span><span>Potatoes</span></div>
+    </div>
+  </div>
+<div class="soil-card" data-href="{{ url_for('soil_detail_loamy') }}">
+<script>
+  document.querySelectorAll('.soil-card').forEach(card => {
+    card.addEventListener('click', () => {
+      window.location.href = card.dataset.href;
+    });
+  });
+</script>
+
+    <i class="fa-solid fa-seedling soil-icon" style="color:green;"></i>
+    <div>
+      <div class="soil-name">Loamy Soil</div>
+      <div class="soil-ph">pH: 6.0-7.5</div>
+      <div class="soil-crops">Best crops: <span>Wheat</span><span>Soybeans</span><span>Vegetables</span></div>
+    </div>
+  </div>
+<div class="soil-card" data-href="{{ url_for('soil_detail_silty') }}">
+<script>
+  document.querySelectorAll('.soil-card').forEach(card => {
+    card.addEventListener('click', () => {
+      window.location.href = card.dataset.href;
+    });
+  });
+</script>
+
+    <i class="fa-solid fa-water soil-icon" style="color:blue;"></i>
+    <div>
+      <div class="soil-name">Silty Soil</div>
+      <div class="soil-ph">pH: 5.5-7.0</div>
+      <div class="soil-crops">Best crops: <span>Rice</span><span>Sugarcane</span><span>Maize</span></div>
+    </div>
+  </div>
+
+<div class="soil-card" data-href="{{ url_for('soil_detail_peaty') }}">
+  <script>
+  document.querySelectorAll('.soil-card').forEach(card => {
+    card.addEventListener('click', () => {
+      window.location.href = card.dataset.href;
+    });
+  });
+</script>
+
+    <i class="fa-solid fa-leaf soil-icon" style="color:darkgreen;"></i>
+    <div>
+      <div class="soil-name">Peaty Soil</div>
+      <div class="soil-ph">pH: 4.0-5.5</div>
+      <div class="soil-crops">Best crops: <span>Cranberries</span><span>Lettuce</span><span>Onions</span></div>
+    </div>
+  </div>
+
+<div class="soil-card" data-href="{{ url_for('soil_detail_chalky') }}">
+  <script>
+  document.querySelectorAll('.soil-card').forEach(card => {
+    card.addEventListener('click', () => {
+      window.location.href = card.dataset.href;
+    });
+  });
+</script>
+
+    <i class="fa-solid fa-gem soil-icon" style="color:gray;"></i>
+    <div>
+      <div class="soil-name">Chalky Soil</div>
+      <div class="soil-ph">pH: 7.5+</div>
+      <div class="soil-crops">Best crops: <span>Beets</span><span>Cabbage</span><span>Spinach</span></div>
+    </div>
+  </div>
+
+<div class="soil-card" data-href="{{ url_for('soil_detail_red') }}">
+  <script>
+  document.querySelectorAll('.soil-card').forEach(card => {
+    card.addEventListener('click', () => {
+      window.location.href = card.dataset.href;
+    });
+  });
+</script>
+
+    <i class="fa-solid fa-mountain-sun soil-icon" style="color:red;"></i>
+    <div>
+      <div class="soil-name">Red Soil</div>
+      <div class="soil-ph">pH: 5.5-7.0</div>
+      <div class="soil-crops">Best crops: <span>Groundnut</span><span>Millets</span><span>Oilseeds</span></div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <a href="{{ url_for('home') }}">🏠<br>Home</a>
+    <a href="{{ url_for('crops') }}">🌱<br>Crops</a>
+    <a href="{{ url_for('soil') }}" class="active">⛰<br>Soil</a>
+    <a href="{{ url_for('market') }}">📈<br>Market</a>
+    <a href="{{ url_for('buyhere') }}">🛒<br>Buy Here</a>
+    <a href="{{ url_for('Sell') }}">💲<br>Sell</a>
+    <a href="{{ url_for('help') }}">❓<br>Help</a>
+  </div>
+
+</body>
+</html>

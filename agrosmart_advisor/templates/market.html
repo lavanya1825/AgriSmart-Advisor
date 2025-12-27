@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Prices - Smart Agro Advisor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f8f9f9;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      padding: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header i {
+      margin-right: 8px;
+      color: #4caf50;
+    }
+    .filters {
+      display: flex;
+      gap: 10px;
+      padding: 15px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .filters select {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .summary {
+      display: flex;
+      justify-content: space-around;
+      margin: 15px;
+      padding: 15px;
+      background: #4caf50;
+      color: #fff;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .summary div {
+      text-align: center;
+    }
+    .market-list {
+      margin: 15px;
+    }
+    .market-card {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .market-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .market-info h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+    .market-info small {
+      color: #777;
+    }
+    .trend {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .trend.up { color: green; }
+    .trend.down { color: red; }
+    .trend.stable { color: gray; }
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    /* Bottom nav */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+    .bottom-nav a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+      text-align: center;
+    }
+    .bottom-nav a i {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+    .bottom-nav a.active {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <i class="fas fa-chart-line"></i> Market Prices
+  </header>
+
+  <!-- Filters -->
+  <div class="filters">
+    <select id="stateFilter">
+      <option value="">All States</option>
+      <option>Punjab</option>
+      <option>Haryana</option>
+      <option>Maharashtra</option>
+      <option>Uttar Pradesh</option>
+      <option>Madhya Pradesh</option>
+      <option>Tamil Nadu</option>
+      <option>Karnataka</option>
+      <option>Bihar</option>
+      <option>West Bengal</option>
+      <option>Odisha</option>
+      <option>Himachal Pradesh</option>
+      <option>Rajasthan</option>
+      <option>Gujarat</option>
+    </select>
+    <select id="cropFilter">
+      <option value="">All Crops</option>
+      <option>Apple</option>
+      <option>Chickpea</option>
+      <option>Groundnut</option>
+      <option>Wheat</option>
+      <option>Rice</option>
+      <option>Mango</option>
+      <option>Tomato</option>
+      <option>Banana</option>
+      <option>Onion</option>
+      <option>Potato</option>
+      <option>Cotton</option>
+      <option>Sugarcane</option>
+    </select>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary">
+    <div><span id="risingCount">7</span><br>Rising</div>
+    <div><span id="stableCount">2</span><br>Stable</div>
+    <div><span id="fallingCount">1</span><br>Falling</div>
+  </div>
+
+  <!-- Market List -->
+  <div class="market-list" id="marketList">
+    <!-- Example card -->
+    <div class="market-card" data-state="Punjab" data-crop="Wheat" data-trend="up">
+      <div class="market-info">
+        <h3>🌾 Wheat</h3>
+        <small>Punjab Mandi | Grade A</small>
+        <div class="trend up"><i class="fas fa-arrow-up"></i> +5.2% (₹300)</div>
+      </div>
+      <div class="price">₹2,800 /quintal</div>
+    </div>
+
+    <div class="market-card" data-state="Maharashtra" data-crop="Cotton" data-trend="down">
+      <div class="market-info">
+        <h3>🧵 Cotton</h3>
+        <small>Maharashtra Mandi | Grade A</small>
+        <div class="trend down"><i class="fas fa-arrow-down"></i> -3.1% (₹200)</div>
+      </div>
+      <div class="price">₹6,200 /quintal</div>
+    </div>
+
+    <div class="market-card" data-state="Tamil Nadu" data-crop="Banana" data-trend="up">
+      <div class="market-info">
+        <h3>🍌 Banana</h3>
+        <small>Tamil Nadu Mandi | Grade B</small>
+        <div class="trend up"><i class="fas fa-arrow-up"></i> +4.8% (₹150)</div>
+      </div>
+      <div class="price">₹1,800 /quintal</div>
+    </div>
+
+    <div class="market-card" data-state="Uttar Pradesh" data-crop="Potato" data-trend="stable">
+      <div class="market-info">
+        <h3>🥔 Potato</h3>
+        <small>UP Mandi | Grade B</small>
+        <div class="trend stable"><i class="fas fa-minus"></i> 0% (₹0)</div>
+      </div>
+      <div class="price">₹1,200 /quintal</div>
+    </div>
+
+    <div class="market-card" data-state="West Bengal" data-crop="Rice" data-trend="up">
+      <div class="market-info">
+        <h3>🍚 Rice</h3>
+        <small>West Bengal Mandi | Grade A</small>
+        <div class="trend up"><i class="fas fa-arrow-up"></i> +6.0% (₹400)</div>
+      </div>
+      <div class="price">₹2,600 /quintal</div>
+    </div>
+
+    <div class="market-card" data-state="Bihar" data-crop="Onion" data-trend="down">
+      <div class="market-info">
+        <h3>🧅 Onion</h3>
+        <small>Bihar Mandi | Grade A</small>
+        <div class="trend down"><i class="fas fa-arrow-down"></i> -2.5% (₹100)</div>
+      </div>
+      <div class="price">₹1,000 /quintal</div>
+    </div>
+
+    <div class="market-card" data-state="Madhya Pradesh" data-crop="Chickpea" data-trend="up">
+      <div class="market-info">
+        <h3>🌱 Chickpea</h3>
+        <small>MP Mandi | Grade A</small>
+        <div class="trend up"><i class="fas fa-arrow-up"></i> +3.5% (₹250)</div>
+      </div>
+      <div class="price">₹5,500 /quintal</div>
+    </div>
+
+    <div class="market-card" data-state="Odisha" data-crop="Sugarcane" data-trend="stable">
+      <div class="market-info">
+        <h3>🪵 Sugarcane</h3>
+        <small>Odisha Mandi | Grade A</small>
+        <div class="trend stable"><i class="fas fa-minus"></i> 0% (₹0)</div>
+      </div>
+      <div class="price">₹3,000 /quintal</div>
+    </div>
+
+    <div class="market-card" data-state="Haryana" data-crop="Mango" data-trend="up">
+      <div class="market-info">
+        <h3>🥭 Mango</h3>
+        <small>Haryana Mandi | Grade A</small>
+        <div class="trend up"><i class="fas fa-arrow-up"></i> +7.0% (₹500)</div>
+      </div>
+      <div class="price">₹4,500 /quintal</div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <a href="{{url_for('home')}}"><i class="fas fa-home"></i>Home</a>
+    <a href="{{url_for('crops')}}"><i class="fas fa-seedling"></i>Crops</a>
+    <a href="{{url_for('soil')}}"><i class="fas fa-globe"></i>Soil</a>
+    <a href="{{url_for('market')}}" class="active"><i class="fas fa-chart-line"></i>Market</a>
+    <a href="{{url_for('buyhere')}}"><i class="fas fa-shopping-cart"></i>Buy</a>
+    <a href="{{url_for('Sell')}}"><i class="fas fa-hand-holding-usd"></i>Sell</a>
+    <a href="{{url_for('help')}}"><i class="fas fa-question-circle"></i>Help</a>
+  </div>
+
+  <script>
+    const stateFilter = document.getElementById("stateFilter");
+    const cropFilter = document.getElementById("cropFilter");
+    const marketList = document.getElementById("marketList");
+    const cards = marketList.getElementsByClassName("market-card");
+
+    function filterMarkets() {
+      let state = stateFilter.value;
+      let crop = cropFilter.value;
+      let rising = 0, stable = 0, falling = 0;
+
+      for (let card of cards) {
+        let show = true;
+        if (state && card.dataset.state !== state) show = false;
+        if (crop && card.dataset.crop !== crop) show = false;
+
+        card.style.display = show ? "flex" : "none";
+
+        if (show) {
+          if (card.dataset.trend === "up") rising++;
+          else if (card.dataset.trend === "stable") stable++;
+          else if (card.dataset.trend === "down") falling++;
+        }
+      }
+
+      document.getElementById("risingCount").innerText = rising;
+      document.getElementById("stableCount").innerText = stable;
+      document.getElementById("fallingCount").innerText = falling;
+    }
+
+    stateFilter.addEventListener("change", filterMarkets);
+    cropFilter.addEventListener("change", filterMarkets);
+    filterMarkets();
+  </script>
+</body>
+</html>

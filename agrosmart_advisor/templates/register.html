@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Agro Sahayak Bhasha</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    .register-card {
+      max-width: 450px;
+      margin: 60px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .register-card h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+    .register-card label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+      color: #333;
+    }
+    .register-card input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+    .register-card button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      border: none;
+      background: #2e7d32;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .register-card button:hover {
+      background: #1b5e20;
+    }
+    .register-card .extra {
+      margin-top: 15px;
+      text-align: center;
+    }
+    .register-card .extra a {
+      color: #2e7d32;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .register-card .extra a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-card">
+    <h2>User Registration</h2>
+<form method="get" action="{{url_for('permissions')}}">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+      <label for="location">Location (City, Country)</label>
+      <input type="text" id="location" name="location" placeholder="e.g. Delhi, IN" required>
+
+      <label for="village">Village</label>
+      <input type="text" id="village" name="village" placeholder="Enter your village name" required>
+
+      <button type="submit">Register</button>
+    </form>
+    <div class="extra">
+<p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+  </div>
+</body>
+</html>
