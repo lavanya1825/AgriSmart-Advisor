@@ -322,45 +322,53 @@ function handleLensFile(event) {
   <div class="crop-card"><i class="fa-solid fa-star crop-icon" style="color: orange;"></i><div class="crop-name">Clove</div><div class="crop-time">6-8 years</div><div class="crop-price">₹70000/quintal</div><div class="crop-trend">→ Stable</div><button class="save-btn" data-crop="Clove"><i class="fa-solid fa-bookmark"></i> Save</button></div>
   <div class="crop-card"><i class="fa-solid fa-mortar-pestle crop-icon" style="color: brown;"></i><div class="crop-name">Fenugreek</div><div class="crop-time">110-120 days</div><div class="crop-price">₹5500/quintal</div><div class="crop-trend">↗ Rising</div><button class="save-btn" data-crop="Fenugreek"><i class="fa-solid fa-bookmark"></i> Save</button></div>
 </div>   
+<br>
 <!-- Bottom Navigation -->
+ <br>
   <div class="bottom-nav">
-    <a href="{{url_for('home')}}">🏠<br>Home</a>
-    <a href="{{url_for('crops')}}">🌱<br>Crops</a>
-    <a href="{{url_for('soil')}}">⛰<br>Soil</a>
-    <a href="{{url_for('market')}}">📈<br>Market</a>
-    <a href="{{url_for('buyhere')}}">🛒<br>Buy Here</a>
-    <a href="{{url_for('Sell')}}">💲<br>Sell</a>
-    <a href="{{url_for('help')}}" class="active">❓<br>Help</a> 
+    <a href="home.html">🏠<br>Home</a>
+    <a href="crops.html">🌱<br>Crops</a>
+    <a href="soil.html">⛰<br>Soil</a>
+    <a href="market.html">📈<br>Market</a>
+    <a href="buyhere.html">🛒<br>Buy Here</a>
+    <a href="Sell.html">💲<br>Sell</a>
+    <a href="help.html" class="active">❓<br>Help</a> 
   </div>
       <script src="{{ url_for('static', filename='js/search.js') }}"></script>
 <script>
-document.querySelectorAll(".save-btn").forEach(btn => {
-  btn.addEventListener("click", function () {
-    const crop = this.dataset.crop;
-    const button = this;
+document.querySelectorAll(".save-btn").forEach(button => {
+  button.addEventListener("click", function () {
 
-    fetch("/save-crop", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: `crop=${encodeURIComponent(crop)}`
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.status === "success") {
-        button.classList.add("saved");
-        button.innerHTML = `<i class="fa-solid fa-check"></i> Saved`;
-        button.disabled = true;
+    const card = this.closest(".crop-card");
 
-      } else {
-        alert("Failed to save crop");
-      }
-    })
-    .catch(() => alert("Server error"));
+    const cropData = {
+      name: card.querySelector(".crop-name").innerText,
+      time: card.querySelector(".crop-time").innerText,
+      price: card.querySelector(".crop-price").innerText,
+      trend: card.querySelector(".crop-trend").innerText
+    };
+
+    let savedCrops = JSON.parse(localStorage.getItem("savedCrops")) || [];
+
+    // prevent duplicate save
+    if (savedCrops.some(c => c.name === cropData.name)) {
+      alert("Crop already saved!");
+      return;
+    }
+
+    savedCrops.push(cropData);
+    localStorage.setItem("savedCrops", JSON.stringify(savedCrops));
+
+    this.innerHTML = `<i class="fa-solid fa-check"></i> Saved`;
+    this.disabled = true;
+    this.style.background = "green";
+    this.style.color = "white";
+    setTimeout(() => {
+      window.location.href = "saved_crops.html";
+    }, 500);
   });
 });
-
 </script>
+
 </body>
 </html>
