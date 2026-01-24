@@ -1,25 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Saved Crops</title>
-  <style>
-    body { font-family: Arial; padding: 20px; }
-    .crop { background: #e8ffe8; padding: 10px; margin: 8px 0; border-radius: 6px; }
-  </style>
+<meta charset="UTF-8">
+<title>Saved Crops</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f0fdf4;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #2e7d32;
+}
+
+.saved-container {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.crop-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.crop-card h3 {
+  margin: 0 0 10px;
+  color: #2e7d32;
+}
+
+.crop-card p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.empty {
+  text-align: center;
+  color: #666;
+  margin-top: 50px;
+}
+</style>
 </head>
+
 <body>
 
-<h2>🌱 Your Saved Crops</h2>
+<h2>🌾 Saved Crops</h2>
 
-{% if crops %}
-  {% for crop in crops %}
-    <div class="crop">{{ crop }}</div>
-  {% endfor %}
-{% else %}
-  <p>No crops saved yet.</p>
-{% endif %}
+<div class="saved-container" id="savedContainer"></div>
+<p class="empty" id="emptyMsg">No crops saved yet.</p>
 
-<a href="{{ url_for('crops') }}">⬅ Back to Crops</a>
+<script>
+const container = document.getElementById("savedContainer");
+const emptyMsg = document.getElementById("emptyMsg");
+
+const savedCrops = JSON.parse(localStorage.getItem("savedCrops")) || [];
+
+if (savedCrops.length === 0) {
+  emptyMsg.style.display = "block";
+} else {
+  emptyMsg.style.display = "none";
+
+  savedCrops.forEach(crop => {
+    const card = document.createElement("div");
+    card.className = "crop-card";
+
+    card.innerHTML = `
+      <h3>${crop.name}</h3>
+      <p><b>Growing Time:</b> ${crop.time}</p>
+      <p><b>Market Price:</b> ${crop.price}</p>
+      <p><b>Trend:</b> ${crop.trend}</p>
+    `;
+
+    container.appendChild(card);
+  });
+}
+</script>
 
 </body>
 </html>
